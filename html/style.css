@@ -83,9 +83,9 @@
     /* for better aligning with the input fields inside forms */
     label {
         /* in order for the width to be set successfully
-        set the display: inline-block; first is necessary
+        setting the 'display: inline-block;' first is necessary
         because label is an inline element
-        setting the width will not work without it being a block display style */
+        setting the width will not work without making it a block display style first */
         display: inline-block;
         width: 80px;
     }
@@ -111,12 +111,13 @@
 
         /* set box-sizing to border-box */
         /* for the <input> and <select> to line up */
-        /* since the <input> adds its padding to the set width but the <select> doesn't */
-        /* 'border-box' will set the width solidly as it's set including the padding, etc. */
+        /* since the <input> adds its padding to the set width
+        but the <select> doesn't */
+        /* border-box will set the width solidly as it's set including the padding, etc. */
         box-sizing: border-box;
     }
 
-    /* input fields : hover & active effect */
+    /* input fields : hover & focus effect */
     /* :hover is when the mouse hover through */
     /* :focus is when the field being clicked on */
     input:hover,
@@ -188,7 +189,7 @@
 
         /* center the content vertically from the top 80% of the viewport */
         display: flex; /* make it as a flexible container */
-        align-items: center; /* vertically center the items (display: flex; is required for this attribute to work) */
+        align-items: center; /* vertically center the items ('display: flex;' is required for this attribute to work) */
         min-height: 80vh; /* minimum height: 80% of the viewport's height */
         
         /* limiting the width */
@@ -260,7 +261,7 @@
         /* buttons' widths can automatically grow to fit inside a flex container with this line */
         /* the number 1 means to take the space of 1/total number of items
         for the scenario using here for this project
-        the number doesn't really matter (it can be 2, 3, 4, 5... but it can't be 0) */
+        the number doesn't really matter (it can be 2, 3, 4, 5... but it cannot be 0) */
         flex-grow: 1;
     }
 
