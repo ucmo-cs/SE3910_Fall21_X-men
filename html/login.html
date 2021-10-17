@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<!--
+    Login Page
+
+        SE 3910 Software Engineering - Fall 2021
+        Instructor: Taeghyun Kang
+
+        Team: X-men
+            Bryant Michael Belino Bugna
+            Noah Erb
+            De-Shian Lin
+            Austin Loucks
+            Kathryn McMeen
+        
+        Commerce Bank Project
+        Hotel Cubicle Reservation System
+-->
+
+<!-- html (HyperText Markup Language) -->
+<!---- web language: English ---->
+<!---- id for the background-image control in CSS ---->
+<html lang="en" id="login-page">
+
+<!-- head - meta, title, and the linking CSS and JS goes here -->
+<head>
+
+    <!-- set the character encoding to UTF-8 -->
+    <meta charset="UTF-8">
+
+    <!-- web title -->
+    <title>Login | Hotel Cubicle Reservation System</title>
+
+    <!-- link the CSS file -->
+    <!---- rel (relationship): stylesheet ---->
+    <!---- href (hypertext reference): file location/name ---->
+    <link rel="stylesheet" href="style.css">
+
+</head> <!-- end head -->
+
+<!-- body - almost all the page content goes here -->
+<body>
+
+    <!-- div (division) - css class: main-frame -->
+    <!-- the outermost frame for
+    centering the content
+    limiting the width
+    set the font -->
+    <div class="main-frame">
+
+        <!-- div (division) - css class: green-frame -->
+        <!-- the green and round corner frame -->
+        <div class="green-frame">
+
+            <!-- title in h1 (heading level 1) style -->
+            <h1>Hotel Cubicle Reservation</h1>
+
+            <!-- form for the user to input-->
+            <!---- action: send to the user-main after submit ---->
+            <form action="user-main.html">
+
+                <!-- lable - for user ID input -->
+                <!-- when the label is clicked, it will focus to the input field-->
+                <label for="userID">User ID</label>
+				
+                <br> <!-- br (break) - next line -->
+				
+                <!-- user ID input field -->
+                <!---- type defining input type ---->
+                <!---- id for JS control ---->
+                <!---- name for sending data ---->
+                <input type="text" id="userID" name="userID">
+                
+                <br> <!-- br (break) - next line -->
+
+                <!-- lable - for password input -->
+                <!-- when the label is clicked, it will focus to the input field-->
+                <label for="password">Password</label>
+				
+                <br> <!-- br (break) - next line -->
+				
+                <!-- password input field -->
+                <!---- type defining input type ---->
+                <!---- id for JS control ---->
+                <!---- name for sending data ---->
+                <input type="password" id="password" name="password">
+
+                <!-- next line twice for a bigger space in between -->
+                <br> <!-- br (break) - next line -->
+                <br> <!-- br (break) - next line -->
+
+                <!-- div (division) - css class: flex-wrap -->
+                <!-- for buttons to auto take the full width and/or divide the space -->
+                <div class="flex-wrap">
+                
+                    <!-- sign-in button -->
+                    <!---- type defining button type ---->
+                    <!---- css class: button-in-green-frame ---->
+                    <button type ="submit" class="button-in-green-frame">Sign-in</button>
+
+                    <!-- Admin Sign-in button
+                    <button type ="submit" class="button-in-green-frame">Admin Sign-in</button>
+                    -->
+
+                </div> <!-- end flex-wrap -->
+
+            </form> <!-- end form -->
+
+        </div> <!-- end green-frame -->
+
+    </div> <!-- end main-frame -->
+
+    <!-- footer - typically contains the additional info or links -->
+    <footer>
+
+        <!-- p (paragraph) -->
+        <p>
+
+            <!-- b (bold) -->
+            <b>X-men | Commerce Bank Project</b>
+            
+            <br> <!-- br (break) - next line -->
+
+            SE 3910 Software Engineering - Fall 2021
+
+        </p> <!-- end p -->
+
+    </footer> <!-- end footer -->
+
+</body> <!-- end body -->
+
+</html> <!-- end html -->
