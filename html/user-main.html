@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<!--
+    User Main Page
+
+        SE 3910 Software Engineering - Fall 2021
+        Instructor: Taeghyun Kang
+
+        Team: X-men
+            Bryant Michael Belino Bugna
+            Noah Erb
+            De-Shian Lin
+            Austin Loucks
+            Kathryn McMeen
+        
+        Commerce Bank Project
+        Hotel Cubicle Reservation System
+-->
+
+<!-- html (HyperText Markup Language) -->
+<!---- web language: English ---->
+<!---- id for the background-image control in CSS ---->
+<html lang="en" id="user-main-page">
+
+<!-- head - meta, title, and the linking CSS and JS goes here -->
+<head>
+
+    <!-- set the character encoding to UTF-8 -->
+    <meta charset="UTF-8">
+
+    <!-- web title -->
+    <title>Main | Hotel Cubicle Reservation System</title>
+
+    <!-- link the CSS file -->
+    <!---- rel (relationship): stylesheet ---->
+    <!---- href (hypertext reference): file location/name ---->
+    <link rel="stylesheet" href="style.css">
+
+</head> <!-- end head -->
+
+<!-- body - almost all the page content goes here -->
+<body>
+
+    <!-- div (division) - css class: main-frame -->
+    <!-- the outermost frame for
+    centering the content
+    limiting the width
+    set the font -->
+    <div class="main-frame">
+
+        <!-- div (division) - css class: green-frame -->
+        <!-- the green and round corner frame -->
+        <div class="green-frame">
+
+            <!-- title in h1 (heading level 1) style -->
+            <h1>Welcome 
+                <!-- span - generic inline container for phrasing content -->
+                <!---- id for JS to send in variable user name ---->
+                <span id="name">
+                    <!-- & is the escape character of html -->
+                    <!---- 
+                        &lt; is > (less than symbol)
+                        &gt; is < (greater than symbol)
+                    ---->
+                    &lt;user&gt;
+                </span>
+                !
+            </h1>
+            
+            <!-- form -->
+            <!-- for the buttons inside to act 'formaction' linking to the other pages -->
+            <form>
+                
+                <!-- button - css class: button-in-green-frame -->
+                <!---- formaction links to user-create page ---->
+                <button class="button-in-green-frame" formaction="user-create.html">
+                    CREATE RESERVATION
+                </button>
+
+                <!-- not sure why having those <br> in between will make those buttons shorter
+                (the CSS made the buttons here 100% width) but it looks fine so keep them -->
+                <br> <!-- br (break) - next line -->
+                
+                <!-- button - css class: button-in-green-frame -->
+                <!---- formaction links to user-view page ---->
+                <button class="button-in-green-frame" formaction="user-view.html">
+                    VIEW RESERVATIONS
+                </button>
+
+                <br> <!-- br (break) - next line -->
+
+                <!-- button - css class: button-in-green-frame -->
+                <!---- formaction links to user-cancel page ---->
+                <button class="button-in-green-frame" formaction="user-cancel.html">
+                    CANCEL RESERVATIONS
+                </button>
+
+                <br> <!-- br (break) - next line -->
+
+                <!-- button - css class: button-in-green-frame -->
+                <!---- formaction links to login page ---->
+                <button class="button-in-green-frame" formaction="login.html">
+                    LOGOUT
+                </button>
+
+            </form> <!-- end form-->
+
+        </div> <!-- end green-frame -->
+
+    </div> <!-- end main-frame -->
+
+    <!-- footer - typically contains the additional info or links -->
+    <footer>
+
+        <!-- p (paragraph) -->
+        <p>
+
+            <!-- b (bold) -->
+            <b>X-men | Commerce Bank Project</b>
+            
+            <br> <!-- br (break) - next line -->
+
+            SE 3910 Software Engineering - Fall 2021
+
+        </p> <!-- end p -->
+
+    </footer> <!-- end footer -->
+
+</body> <!-- end body -->
+
+</html> <!-- end html -->
