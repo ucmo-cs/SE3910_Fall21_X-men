@@ -53,12 +53,56 @@
 
             <!-- title in h1 (heading level 1) style -->
             <h1>Your Reservations</h1>
-            <p class="userNameID">
-                <span id="name">Lason</span>
-                 · 
-                <span id="ID">41645645</span>
-            </p>
 
+            
+            <h2 id = "reservations"> 
+                <!-- <p class="userNameID">
+                <span id="name">Lason</span>
+                · 
+                <span id="ID">41645645</span>
+                </p> -->
+            </h2>
+
+            <script>
+                var reservationCount = 5;
+
+                for (let i = 0; i < reservationCount; i++)
+                {
+                    // create a <p> </p> element
+                    var p_tag = document.createElement("p");
+
+                    // create a <span> </span> element
+                    var span_name = document.createElement("span");
+
+                    // create the text to add inside the span
+                    var name_content = document.createTextNode("Lason");
+
+                    // set span id to name
+                    // <span id = "name"> </span>
+                    span_name.id = "name" 
+
+                    // add the text into the span 
+                    // <span id = name>Lason</span>
+                    span_name.appendChild(name_content);
+
+                    // create a "." text
+                    var dot_text = document.createTextNode(".");
+                    
+                    // same format to create a new span as previous
+                    var span_id = document.createElement("span");
+                    var id_content = document.createTextNode("41645645");
+                    span_id.id = "ID";
+                    span_id.appendChild(id_content);
+
+                    // add the spans and text into the <p> tag
+                    p_tag.appendChild(span_name);
+                    p_tag.appendChild(dot_text);
+                    p_tag.appendChild(span_id);
+
+                    // find the element with this id in the HTML and add the p_tag
+                    document.getElementById("reservations").appendChild(p_tag);       
+                }    
+            </script>   
 
         </div> <!-- end green-frame -->
 
