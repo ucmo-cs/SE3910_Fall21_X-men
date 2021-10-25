@@ -42,126 +42,132 @@
 
     <!-- div (division) - css class: main-frame -->
     <!-- the outermost frame for
-    centering the content
-    limiting the width
-    set the font -->
+    centering the content and limiting the width -->
     <div class="main-frame">
 
-        <!-- div (division) - css class: green-frame -->
-        <!-- the green and round corner frame -->
-        <div class="green-frame">
+        <!-- div (division) - css class: content-frame -->
+        <!-- wrapping up the content (frames and buttons) 
+        for keeping them in the vertical center
+        also set the 100% width -->
+        <div class="content-frame">
 
-            <!-- title in h1 (heading level 1) style -->
-            <h1>Please enter the following</h1>
+            <!-- div (division) - css class: green-frame -->
+            <!-- the green and round corner frame -->
+            <div class="green-frame">
 
-            <!-- form for the user to input-->
-            <form>
+                <!-- title in h1 (heading level 1) style -->
+                <h1>Please enter the following</h1>
 
-                <!-- label - for ID input -->
-                <!-- when the label is clicked, it will focus to the input field -->
-                <label for="ID">ID</label>
-                <!-- ID input field -->
-                <!---- type defining input type ---->
-                <!---- id for JS control ---->
-                <!---- name for sending data ---->
-                <input type="text" id="ID" name="ID">
+                <!-- form for the user to input-->
+                <form>
 
-                <br> <!-- br (break) - next line -->
+                    <!-- label - for ID input -->
+                    <!-- when the label is clicked, it will focus to the input field -->
+                    <label for="ID">ID</label>
+                    <!-- ID input field -->
+                    <!---- type defining input type ---->
+                    <!---- id for JS control ---->
+                    <!---- name for sending data ---->
+                    <input type="text" id="ID" name="ID">
 
-                <!-- label - for name input -->
-                <!-- when the label is clicked, it will focus to the input field -->
-                <label for="name">Name</label>
-                <!-- name input field -->
-                <!---- type defining input type ---->
-                <!---- id for JS control ---->
-                <!---- name for sending data ---->
-                <input type="text" id="name" name="name">
+                    <br> <!-- br (break) - next line -->
 
-                <br> <!-- br (break) - next line -->
+                    <!-- label - for name input -->
+                    <!-- when the label is clicked, it will focus to the input field -->
+                    <label for="name">Name</label>
+                    <!-- name input field -->
+                    <!---- type defining input type ---->
+                    <!---- id for JS control ---->
+                    <!---- name for sending data ---->
+                    <input type="text" id="name" name="name">
 
-                <!-- label - for start day input -->
-                <!-- when the label is clicked, it will focus to the input field -->
-                <label for="startDay">Start day</label>
-                <!-- start day input field -->
-                <!---- type defining input type ---->
-                <!---- id for JS control ---->
-                <!---- name for sending data ---->
-                <input type="date" id="startDay" name="startDay">
+                    <br> <!-- br (break) - next line -->
 
-                <br> <!-- br (break) - next line -->
+                    <!-- label - for start day input -->
+                    <!-- when the label is clicked, it will focus to the input field -->
+                    <label for="startDay">Start day</label>
+                    <!-- start day input field -->
+                    <!---- type defining input type ---->
+                    <!---- id for JS control ---->
+                    <!---- name for sending data ---->
+                    <input type="date" id="startDay" name="startDay">
 
-                <!-- label - for end day input -->
-                <!-- when the label is clicked, it will focus to the input field -->
-                <label for="endDay">End day</label>
-                <!-- end day input field -->
-                <!---- type defining input type ---->
-                <!---- id for JS control ---->
-                <!---- name for sending data ---->
-                <input type="date" id="endDay" name="endDay">
+                    <br> <!-- br (break) - next line -->
 
-                <br> <!-- br (break) - next line -->
+                    <!-- label - for end day input -->
+                    <!-- when the label is clicked, it will focus to the input field -->
+                    <label for="endDay">End day</label>
+                    <!-- end day input field -->
+                    <!---- type defining input type ---->
+                    <!---- id for JS control ---->
+                    <!---- name for sending data ---->
+                    <input type="date" id="endDay" name="endDay">
 
-                <!-- div (division) - css class: flex-wrap -->
-                <!-- for buttons to auto take the full width and/or divide the space -->
-                <div class="flex-wrap">
+                    <br> <!-- br (break) - next line -->
 
-                    <!-- view available cubicles button -->
-                    <!---- type defining button type ---->
-                    <!---- css class: button-in-green-frame ---->
-                    <button type ="submit" class="button-in-green-frame">
-                        VIEW AVAILABLE CUBICLES
-                    </button>
+                    <!-- div (division) - css class: flex-wrap -->
+                    <!-- for buttons to auto take the full width and/or divide the space -->
+                    <div class="flex-wrap">
 
-                </div> <!-- end flex-wrap -->
+                        <!-- view available cubicles button -->
+                        <!---- type defining button type ---->
+                        <!---- css class: button-in-green-frame ---->
+                        <button type ="submit" class="button-in-green-frame">
+                            VIEW AVAILABLE CUBICLES
+                        </button>
 
-                <!-- p (paragraph) -->
-                <!---- id for JS to send in "Please fill all fields!" when there is an empty field ---->
-                <!---- id for CSS with a different text style ---->
-                <p id="please-fill-all">
-                    <!-- space for holding an empty space -->
-                    <!---- & is the escape character of html ---->
-                    <!---- &nbsp; is space (Non-Breaking Space) ---->
-                    &nbsp;
-                </p> <!-- end p -->
+                    </div> <!-- end flex-wrap -->
 
-                <!-- label - for cubicles select (drop-down) -->
-                <!-- when the label is clicked, it will focus to the select (drop-down) -->
-                <label for="cubicle">Cubicles</label>
-                <!-- cubicles select (drop-down) -->
-                <!---- id for JS control ---->
-                <!---- name for sending data ---->
-                <select id="cubicle" name="cubicle">
-                    <!-- option list inside the drop-down -->
-                    <option value="cubicle12">Cubicle #12</option>
-                    <option value="cubicle13">Cubicle #13</option>
-                </select> <!-- end cubicles select -->
+                    <!-- p (paragraph) -->
+                    <!---- id for JS to send in "Please fill all fields!" when there is an empty field ---->
+                    <!---- id for CSS with a different text style ---->
+                    <p id="please-fill-all">
+                        <!-- space for holding an empty space -->
+                        <!---- & is the escape character of html ---->
+                        <!---- &nbsp; is space (Non-Breaking Space) ---->
+                        &nbsp;
+                    </p> <!-- end p -->
 
-                <br> <!-- br (break) - next line -->
+                    <!-- label - for cubicles select (drop-down) -->
+                    <!-- when the label is clicked, it will focus to the select (drop-down) -->
+                    <label for="cubicle">Cubicles</label>
+                    <!-- cubicles select (drop-down) -->
+                    <!---- id for JS control ---->
+                    <!---- name for sending data ---->
+                    <select id="cubicle" name="cubicle">
+                        <!-- option list inside the drop-down -->
+                        <option value="cubicle12">Cubicle #12</option>
+                        <option value="cubicle13">Cubicle #13</option>
+                    </select> <!-- end cubicles select -->
 
-                <!-- div (division) - css class: flex-wrap -->
-                <!-- for buttons to auto take the full width and/or divide the space -->
-                <div class="flex-wrap">
+                    <br> <!-- br (break) - next line -->
 
-                    <!-- reserve cubicle button -->
-                    <!---- type defining button type ---->
-                    <!---- css class: button-in-green-frame ---->
-                    <button type ="submit" class="button-in-green-frame">
-                        RESERVE CUBICLE
-                    </button>
+                    <!-- div (division) - css class: flex-wrap -->
+                    <!-- for buttons to auto take the full width and/or divide the space -->
+                    <div class="flex-wrap">
 
-                    <!-- back button -->
-                    <!---- type defining button type ---->
-                    <!---- css class: button-in-green-frame ---->
-                    <!---- formaction links to user-main page ---->
-                    <button type ="submit" class="button-in-green-frame" formaction="user-main.html">
-                        BACK
-                    </button>
-                    
-                </div> <!-- end flex-wrap -->
+                        <!-- reserve cubicle button -->
+                        <!---- type defining button type ---->
+                        <!---- css class: button-in-green-frame ---->
+                        <button type ="submit" class="button-in-green-frame">
+                            RESERVE CUBICLE
+                        </button>
 
-            </form> <!-- end form -->
+                        <!-- back button -->
+                        <!---- type defining button type ---->
+                        <!---- css class: button-in-green-frame ---->
+                        <!---- formaction links to user-main page ---->
+                        <button type ="submit" class="button-in-green-frame" formaction="user-main.html">
+                            BACK
+                        </button>
+                        
+                    </div> <!-- end flex-wrap -->
 
-        </div> <!-- end green-frame -->
+                </form> <!-- end form -->
+
+            </div> <!-- end green-frame -->
+
+        </div> <!-- end content-frame -->
 
     </div> <!-- end main-frame -->
 
@@ -172,7 +178,7 @@
         <p>
 
             <!-- b (bold) -->
-            <b>X-men | Commerce Bank Project</b>
+            <b>X-men</b> | <b>Commerce Bank Project</b>
             
             <br> <!-- br (break) - next line -->
 
