@@ -42,69 +42,73 @@
 
     <!-- div (division) - css class: main-frame -->
     <!-- the outermost frame for
-    centering the content
-    limiting the width
-    set the font -->
+    centering the content and limiting the width -->
     <div class="main-frame">
 
-        <!-- div (division) - css class: green-frame -->
-        <!-- the green and round corner frame -->
-        <div class="green-frame">
+        <!-- div (division) - css class: content-frame -->
+        <!-- wrapping up the content (frames and buttons) 
+        for keeping them in the vertical center
+        also set the 100% width -->
+        <div class="content-frame">
 
-            <!-- title in h1 (heading level 1) style -->
-            <h1>Welcome 
-                <!-- span - generic inline container for phrasing content -->
-                <!---- id for JS to send in variable user name ---->
-                <span id="name">
-                    <!-- & is the escape character of html -->
-                    <!---- 
-                        &lt; is > (less than symbol)
-                        &gt; is < (greater than symbol)
-                    ---->
-                    &lt;user&gt;
-                </span>
-                !
-            </h1>
-            
-            <!-- form -->
-            <!-- for the buttons inside to act 'formaction' linking to the other pages -->
-            <form>
+            <!-- div (division) - css class: green-frame -->
+            <!-- the green and round corner frame -->
+            <div class="green-frame">
+
+                <!-- title in h1 (heading level 1) style -->
+                <h1>Welcome 
+                    <!-- span - generic inline container for phrasing content -->
+                    <!---- id for JS to send in variable user name ---->
+                    <span id="name">
+                        <!-- & is the escape character of html -->
+                        <!---- 
+                            &lt; is > (less than symbol)
+                            &gt; is < (greater than symbol)
+                        ---->
+                        &lt;user&gt;
+                    </span>
+                    !
+                </h1>
                 
-                <!-- button - css class: button-in-green-frame -->
-                <!---- formaction links to user-create page ---->
-                <button class="button-in-green-frame" formaction="user-create.html">
-                    CREATE RESERVATION
-                </button>
+                <!-- form -->
+                <!-- for the buttons inside to act 'formaction' linking to the other pages -->
+                <form>
+                    
+                    <!-- button - css class: button-in-green-frame -->
+                    <!---- formaction links to user-create page ---->
+                    <button class="button-in-green-frame" formaction="user-create.html">
+                        CREATE RESERVATION
+                    </button>
 
-                <!-- not sure why having those <br> in between will make those buttons shorter
-                (the CSS made the buttons here 100% width) but it looks fine so keep them -->
-                <br> <!-- br (break) - next line -->
-                
-                <!-- button - css class: button-in-green-frame -->
-                <!---- formaction links to user-view page ---->
-                <button class="button-in-green-frame" formaction="user-view.html">
-                    VIEW RESERVATIONS
-                </button>
+                    <br> <!-- br (break) - next line -->
+                    
+                    <!-- button - css class: button-in-green-frame -->
+                    <!---- formaction links to user-view page ---->
+                    <button class="button-in-green-frame" formaction="user-view.html">
+                        VIEW RESERVATIONS
+                    </button>
 
-                <br> <!-- br (break) - next line -->
+                    <br> <!-- br (break) - next line -->
 
-                <!-- button - css class: button-in-green-frame -->
-                <!---- formaction links to user-cancel page ---->
-                <button class="button-in-green-frame" formaction="user-cancel.html">
-                    CANCEL RESERVATIONS
-                </button>
+                    <!-- button - css class: button-in-green-frame -->
+                    <!---- formaction links to user-cancel page ---->
+                    <button class="button-in-green-frame" formaction="user-cancel.html">
+                        CANCEL RESERVATIONS
+                    </button>
 
-                <br> <!-- br (break) - next line -->
+                    <br> <!-- br (break) - next line -->
 
-                <!-- button - css class: button-in-green-frame -->
-                <!---- formaction links to login page ---->
-                <button class="button-in-green-frame" formaction="login.html">
-                    LOGOUT
-                </button>
+                    <!-- button - css class: button-in-green-frame -->
+                    <!---- formaction links to login page ---->
+                    <button class="button-in-green-frame" formaction="login.html">
+                        LOGOUT
+                    </button>
 
-            </form> <!-- end form-->
+                </form> <!-- end form-->
 
-        </div> <!-- end green-frame -->
+            </div> <!-- end green-frame -->
+
+        </div> <!-- end content-frame -->
 
     </div> <!-- end main-frame -->
 
@@ -115,7 +119,7 @@
         <p>
 
             <!-- b (bold) -->
-            <b>X-men | Commerce Bank Project</b>
+            <b>X-men</b> | <b>Commerce Bank Project</b>
             
             <br> <!-- br (break) - next line -->
 
