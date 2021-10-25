@@ -44,6 +44,12 @@
 
 /********** modifying original html tags **********/
 
+    html {
+        /* font: Poppins (imported from Google Fonts) */
+        /* if font Poppins cannot be found, then use any system sans-serif font */
+        font-family: Poppins, sans-serif;
+    }
+
     /* h1 (heading level 1) */
     h1 {
         /* wider margin to bottom */
@@ -63,20 +69,10 @@
         text-align: center;
 
         /* text color: white */
-        color: #ffffff;
+        color: #FFF;
 
         /* smaller font size */
         font-size: 11px;
-    }
-
-    form {
-        /* set display to inline-block */
-        /* so the form can line up in the center horizontally
-        specifically (kind of inherit) from the class green-frame, which has 'text-align: cneter;' */
-        display: inline-block;
-
-        /* content inside (label, input, etc.) still aligns to left */
-        text-align: left;
     }
 
     /* set the label width to a fixed number */
@@ -115,6 +111,12 @@
         but the <select> doesn't */
         /* border-box will set the width solidly as it's set including the padding, etc. */
         box-sizing: border-box;
+
+        /* font: Poppins (imported from Google Fonts) */
+        /* if font Poppins cannot be found, then use any system sans-serif font */
+        font-family: Poppins, sans-serif;
+
+        transition: .25s;
     }
 
     /* input fields : hover & focus effect */
@@ -128,9 +130,33 @@
         box-shadow: 4px 4px 8px rgba(0, 0, 0, .5);
         /* offset-x  offset-y  blur-radius  color-rgba(red, green, blue, alpha) */
 
-        /* set the border to none */
-        /* originally there are borders for an input field */
-        border: none;
+        /* set the outline to none */
+        /* there is a system default outline for an input field */
+        outline: none;
+    }
+
+    button {
+        /* margin to bottom */
+        margin-bottom: 2em;
+
+        /* round corners */
+        border-radius: 4px;
+
+        /* set the cursor to pointer */
+        /* so when the mouse is on it, the cursor shows a hand icon */
+        cursor: pointer;
+
+        /* buttons' widths can automatically grow to fit inside a flex container with this line */
+        /* the number 1 means to take the space of 1/total number of items
+        for the scenario using here for this project
+        the number doesn't really matter (it can be 2, 3, 4, 5... but it cannot be 0) */
+        flex-grow: 1;
+
+        /* font: Poppins (imported from Google Fonts) */
+        /* if font Poppins cannot be found, then use any system sans-serif font */
+        font-family: Poppins, sans-serif;
+
+        transition: .25s;
     }
 
 /********** end modifying original html tags **********/
@@ -159,14 +185,13 @@
         /* scales the beckground images as large as possible to fill the viewport */
         background-size: cover;
 
-        /* a layer of colored background */
-        background-color: rgba(255, 255, 255, .5);
-        /* rgba(red, green, blue, alpha) */
+        /* a layer of gray background */
+        background-color: #BEBEBE;
 
-        /* blend the colored layer with the beckground images by overlay */
+        /* blend the gray layer with the beckground images by overlay */
         /* note: for properly working
         this part has to be after the background images and
-        the colored layer have been set */
+        the gray layer have been set */
         background-blend-mode: overlay;
         /* This is the improvement from the feedback of our first prototype:
             // For the picture, I would just make it slightly transparent – 
@@ -195,16 +220,18 @@
         /* limiting the width */
         /* 375px may fit for the most phone screen resolution */
         max-width: 375px;
+    }
 
-        /* font: Poppins (imported from Google Fonts) */
-        /* if font Poppins cannot be found, then use any system sans-serif font */
-        font-family: Poppins, sans-serif;
+    /* content frame */
+    .content-frame {
+        /* width 100% to fill the gaps (therefore no left/right margins to the outer frame) */
+        width: 100%;
     }
 
     /* green frame */
     .green-frame {
-        /* width 100% to fill the gaps (therefore no left/right margins to the outer frame) */
-        width: 100%;
+        /* margin to bottom */
+        margin-bottom: .8em;
 
         /* spaces (top, bottom, left, right) to the content inside */
         padding: 24px;
@@ -219,7 +246,40 @@
         background-color: #016747;
 
         /* text color: white */
-        color: #ffffff;
+        color: #FFF;
+
+        /* shadow */
+        box-shadow: 4px 4px 8px rgba(0, 0, 0, .5);
+        /* offset-x  offset-y  blur-radius  color-rgba(red, green, blue, alpha) */
+    }
+
+    .green-frame > form {
+        /* set display to inline-block */
+        /* so the form can line up in the center horizontally
+        specifically (kind of inherit) from the class green-frame, which has 'text-align: cneter;' */
+        display: inline-block;
+
+        /* content inside (label, input, etc.) still aligns to left */
+        text-align: left;
+    }
+
+    .white-frame {
+        /* margin to bottom */
+        margin-bottom: .5em;
+        
+        /* space to the content inside */
+        padding: 16px 24px;
+        /* top/bottom  left/right */
+
+        /* round corners */
+        border-radius: 8px;
+
+        /* background color: white */
+        background-color: #FFF;
+
+        /* border */
+        border: 2.4px solid #016747;
+        /* border-width  border-style  border-color */
 
         /* shadow */
         box-shadow: 4px 4px 8px rgba(0, 0, 0, .5);
@@ -234,8 +294,66 @@
 
     /* button inside the green frame */
     .button-in-green-frame {
-        /* margin to bottom */
-        margin-bottom: 2em;
+        /* space to the content inside */
+        padding: .6em 1em;
+        /* top/bottom  left/right */
+
+        /* background color: Commerce Bank light green */
+        background-color: #4EA800;
+
+        /* text color: white */
+        color: #FFF;
+
+        /* set the border to none */
+        /* originally there are borders for a button */
+        border: none;
+    }
+
+    /* button inside the green frame : hover & active effect */
+    /* :hover is when the mouse hover through */
+    /* :active is when the button being clicked down */
+    /* :focus is when the button being focused (ex. using the tab↹ key to switch focus to it) */
+    .button-in-green-frame:hover,
+    .button-in-green-frame:active,
+    .button-in-green-frame:focus {
+        /* shadow */
+        box-shadow: 4px 4px 8px rgba(0, 0, 0, .4);
+        /* offset-x  offset-y  blur-radius  color-rgba(red, green, blue, alpha) */
+        
+        /* text glow effect */
+        text-shadow: 0 0 2px #FFF;
+        /* h-shadow(horizontal shadow)  v-shadow(vertical shadow)  blur-radius  color */
+
+        /* set the outline to none */
+        /* there is a system default outline for an input field */
+        outline: none;
+    }
+
+    .white-button {
+        /* margin to top */
+        margin-top: .4em;
+        
+        /* space to the content inside */
+        padding: .5em 1.5em;
+        /* top/bottom  left/right */
+
+        /* background color: white */
+        background-color: #FFF;
+
+        /* text color: Commerce Bank light green */
+        color: #4EA800;
+
+        /* font weight: 700 (Bold) */
+        font-weight: 700;
+
+        /* border */
+        border: 2.4px solid #4EA800;
+        /* border-width  border-style  border-color */
+    }
+
+    .green-button {
+        /* margin to top */
+        margin-top: .4em;
 
         /* space to the content inside */
         padding: .8em 1.5em;
@@ -245,38 +363,40 @@
         background-color: #4EA800;
 
         /* text color: white */
-        color: #ffffff;
-
-        /* round corners */
-        border-radius: 4px;
+        color: #FFF;
 
         /* set the border to none */
         /* originally there are borders for a button */
         border: none;
-        
-        /* set the cursor to pointer */
-        /* so when the mouse is on it, the cursor shows a hand icon */
-        cursor: pointer;
-
-        /* buttons' widths can automatically grow to fit inside a flex container with this line */
-        /* the number 1 means to take the space of 1/total number of items
-        for the scenario using here for this project
-        the number doesn't really matter (it can be 2, 3, 4, 5... but it cannot be 0) */
-        flex-grow: 1;
     }
 
-    /* button inside the green frame : hover & active effect */
+    /* white & green buttons : hover & active effect */
     /* :hover is when the mouse hover through */
     /* :active is when the button being clicked down */
-    .button-in-green-frame:hover,
-    .button-in-green-frame:active {
-        /* shadow */
-        box-shadow: 4px 4px 8px rgba(0, 0, 0, .4);
-        /* offset-x  offset-y  blur-radius  color-rgba(red, green, blue, alpha) */
+    /* :focus is when the button being focused (ex. using the tab↹ key to switch focus to it) */
+    .white-button:hover,
+    .white-button:active,
+    .white-button:focus,
+    .green-button:hover,
+    .green-button:active,
+    .green-button:focus {
+        /* background color: Commerce Bank dark green */
+        background-color: #016747;
+
+        /* border color*/
+        border-color: #016747;
+        /* border-width  border-style  border-color */
         
+        /* text color: white */
+        color: #FFF;
+
         /* text glow effect */
-        text-shadow: 0 0 3px #ffffff;
+        text-shadow: 0 0 1.5px #FFF;
         /* h-shadow(horizontal shadow)  v-shadow(vertical shadow)  blur-radius  color */
+
+        /* set the outline to none */
+        /* there is a system default outline for an input field */
+        outline: none;
     }
 
 /********** end buttons **********/
@@ -299,7 +419,12 @@
     #user-main-page .button-in-green-frame {
         /* set the buttons there to 100% width */
         /* otherwise the buttons aren't the same length */
-        width: 100%;
+        width: 232px;
+    }
+
+    #user-view-page .green-frame,
+    #user-cancel-page .green-frame {
+        padding: 12px;
     }
 
     /* style for "Please fill all fields!" in user create page */
@@ -325,6 +450,20 @@
     .userNameID {
         /* negative margin to top brings it closer to the upper item */
         margin-top: -1.8em;
+    }
+
+    .green-text {
+        color: #016747;
+    }
+
+    .date-block {
+        width: 88px;
+        display: inline-block;
+    }
+
+    .small-bold{
+        font-size: 13px;
+        font-weight: 700;
     }
 
 /********** end special **********/
