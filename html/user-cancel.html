@@ -42,69 +42,151 @@
 
     <!-- div (division) - css class: main-frame -->
     <!-- the outermost frame for
-    centering the content
-    limiting the width
-    set the font -->
+    centering the content and limiting the width -->
     <div class="main-frame">
 
-        <!-- div (division) - css class: green-frame -->
-        <!-- the green and round corner frame -->
-        <div class="green-frame">
+        <!-- div (division) - css class: content-frame -->
+        <!-- wrapping up the content (frames and buttons) 
+        for keeping them in the vertical center
+        also set the 100% width -->
+        <div class="content-frame">
 
-            <!-- title in h1 (heading level 1) style -->
-            <h1>Your Reservations</h1>
+            <!-- div (division) - css class: green-frame -->
+            <!-- the green and round corner frame -->
+            <div class="green-frame">
 
+                <!-- title in h1 (heading level 1) style -->
+                <h1>Your Reservations</h1>
+                
+                <!-- p (paragraph) - css class: userNameID -->
+                <p class="userNameID">
+
+                    <!-- span - generic inline container for phrasing content -->
+                    <!---- id for JS to send in variable name and ID ---->
+                    <span id="name">Lason</span>
+                    · 
+                    <span id="ID">41645645</span>
+
+                </p> <!-- end userNameID -->
             
-            <h2 id = "reservations"> 
-                <!-- <p class="userNameID">
-                <span id="name">Lason</span>
-                · 
-                <span id="ID">41645645</span>
-                </p> -->
-            </h2>
+            </div> <!-- end green-frame -->
+
+
+            <!-- reservations loop -->
+            <div id="reservations"></div>
 
             <script>
                 var reservationCount = 5;
 
                 for (let i = 0; i < reservationCount; i++)
                 {
-                    // create a <p> </p> element
-                    var p_tag = document.createElement("p");
+                    // create a <div> </div> element
+                    var white_frame = document.createElement("div");
+                    // set div class
+                    // <div class = "white-frame"> </div>
+                    white_frame.className = "white-frame";
 
                     // create a <span> </span> element
-                    var span_name = document.createElement("span");
+                    var cubicle_number = document.createElement("span");
+                    // set span class
+                    // <span class = "green-text"> </span>
+                    cubicle_number.className = "green-text";
 
                     // create the text to add inside the span
-                    var name_content = document.createTextNode("Lason");
-
-                    // set span id to name
-                    // <span id = "name"> </span>
-                    span_name.id = "name" 
+                    var cubicle_number_text = document.createTextNode("Cubicle #1");
 
                     // add the text into the span 
-                    // <span id = name>Lason</span>
-                    span_name.appendChild(name_content);
+                    // <span span class="green-text">Cubicle #1</span>
+                    cubicle_number.appendChild(cubicle_number_text);
 
-                    // create a "." text
-                    var dot_text = document.createTextNode(".");
+                    /* same format to create a new elements as previous */
+
+                    // start date block
+                    var start_date_block = document.createElement("div");
+                    start_date_block.className = "date-block";
                     
-                    // same format to create a new span as previous
-                    var span_id = document.createElement("span");
-                    var id_content = document.createTextNode("41645645");
-                    span_id.id = "ID";
-                    span_id.appendChild(id_content);
+                    // start date title
+                    var start_date_title = document.createElement("span");
+                    start_date_title.className = "small-bold";
+                    var start_date_title_text = document.createTextNode("Start date");
+                    start_date_title.appendChild(start_date_title_text);
+    
+                    // start date
+                    var start_date = document.createElement("span");
+                    var start_date_text = document.createTextNode("9/12/21");
+                    start_date.appendChild(start_date_text);
 
-                    // add the spans and text into the <p> tag
-                    p_tag.appendChild(span_name);
-                    p_tag.appendChild(dot_text);
-                    p_tag.appendChild(span_id);
+                    // add up to start the date block
+                    start_date_block.appendChild(start_date_title);
+                    var br = document.createElement("br");
+                    start_date_block.appendChild(br);
+                    start_date_block.appendChild(start_date);
 
-                    // find the element with this id in the HTML and add the p_tag
-                    document.getElementById("reservations").appendChild(p_tag);       
+                    // end date block
+                    var end_date_block = document.createElement("div");
+                    end_date_block.className = "date-block";
+
+                    // end date title
+                    var end_date_title = document.createElement("span");
+                    end_date_title.className = "small-bold";
+                    var end_date_title_text = document.createTextNode("End date");
+                    end_date_title.appendChild(end_date_title_text);
+                    
+                    // end date
+                    var end_date = document.createElement("span");
+                    var end_date_text = document.createTextNode("9/12/21");
+                    end_date.appendChild(end_date_text);
+
+                    // add up to end the date block
+                    end_date_block.appendChild(end_date_title);
+                    var br = document.createElement("br");
+                    end_date_block.appendChild(br);
+                    end_date_block.appendChild(end_date);
+                    
+                    // add up to the withe frame
+                    white_frame.appendChild(cubicle_number);
+                    var br = document.createElement("br");
+                    white_frame.appendChild(br);
+                    white_frame.appendChild(start_date_block);
+                    white_frame.appendChild(end_date_block);
+
+                    // find the element with this id in the HTML and add the white frame
+                    document.getElementById("reservations").appendChild(white_frame);       
                 }    
-            </script>   
+            </script>
+            <!-- end reservations loop -->
 
-        </div> <!-- end green-frame -->
+            <!-- form -->
+            <!-- for the buttons inside to act 'formaction' linking to the other pages -->
+            <form>
+                
+                <!-- div (division) - css class: flex-wrap -->
+                <!-- for buttons to auto take the full width and/or divide the space -->
+                <div class="flex-wrap">
+
+                    <!-- view reservations button -->
+                    <!---- type defining button type ---->
+                    <!---- css class: white-button ---->
+                    <!---- formaction links to user-view page ---->
+                    <button type ="submit" class="white-button" formaction="user-view.html">
+                        VIEW RESERVATIONS
+                    </button>
+
+                    <!-- main menu button -->
+                    <!---- type defining button type ---->
+                    <!---- css class: green-button ---->
+                    <!---- formaction links to user-main page ---->
+                    <button type ="submit" class="green-button" formaction="user-main.html">
+                        MAIN MENU
+                    </button>
+                    
+                </div> <!-- end flex-wrap -->
+
+            </form> <!-- end form-->
+
+            </div> <!-- end green-frame -->
+
+        </div> <!-- end content-frame -->
 
     </div> <!-- end main-frame -->
 
@@ -115,7 +197,7 @@
         <p>
 
             <!-- b (bold) -->
-            <b>X-men | Commerce Bank Project</b>
+            <b>X-men</b> | <b>Commerce Bank Project</b>
             
             <br> <!-- br (break) - next line -->
 
