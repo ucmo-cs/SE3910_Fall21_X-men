@@ -42,28 +42,160 @@
 
     <!-- div (division) - css class: main-frame -->
     <!-- the outermost frame for
-    centering the content
-    limiting the width
-    set the font -->
+    centering the content and limiting the width -->
     <div class="main-frame">
 
-        <!-- div (division) - css class: green-frame -->
-        <!-- the green and round corner frame -->
-        <div class="green-frame">
+        <!-- div (division) - css class: content-frame -->
+        <!-- wrapping up the content (frames and buttons) 
+        for keeping them in the vertical center
+        also set the 100% width -->
+        <div class="content-frame">
 
-            <!-- title in h1 (heading level 1) style -->
-            <h1>Your Reservations</h1>
+            <!-- div (division) - css class: green-frame -->
+            <!-- the green and round corner frame -->
+            <div class="green-frame">
 
+                <!-- title in h1 (heading level 1) style -->
+                <h1>Your Reservations</h1>
+                
+                <!-- p (paragraph) - css class: userNameID -->
+                <p class="userNameID">
+
+                    <!-- span - generic inline container for phrasing content -->
+                    <!---- id for JS to send in variable name and ID ---->
+                    <span id="name">Lason</span>
+                    · 
+                    <span id="ID">41645645</span>
+
+                </p> <!-- end userNameID -->
             
-            <h2 id = "reservations"> 
-                <!-- <p class="userNameID">
-                <span id="name">Lason</span>
-                · 
-                <span id="ID">41645645</span>
-                </p> -->
-            </h2>
+            </div> <!-- end green-frame -->
 
-            <script>
+            <!-- div (division) - css class: white-frame -->
+            <!-- the white and round corner frame with the green border -->
+            <div class="white-frame">
+
+                <!-- title -->
+                <!-- b (bold) -->
+                <b>
+                    <!-- span - generic inline container for phrasing content -->
+                    <!---- css class: green-text ---->
+                    <span class="green-text">
+                        Cubicle #
+                    </span>
+                    <!-- span - generic inline container for phrasing content -->
+                    <!---- css class: green-text ---->
+                    <!---- id for JS to send in variable cubicle number -->
+                    <span class="green-text" id="cubicle">
+                        1
+                    </span>
+                </b>
+
+                <br> <!-- br (break) - next line -->
+
+                <!-- div (division) - css class: date-block -->
+                <!-- for lining up the dates -->
+                <div class="date-block">
+                    <!-- span - generic inline container for phrasing content -->
+                    <!---- css class: small-bold ---->
+                    <span class="small-bold">Start date</span>
+                    <br> <!-- br (break) - next line -->
+                    <!-- span - generic inline container for phrasing content -->
+                    <!-- send in variable start date -->
+                    <span>9/16/21</span>
+                </div>
+
+                <!-- div (division) - css class: date-block -->
+                <!-- for lining up the dates -->
+                <div class="date-block">
+                    <!-- span - generic inline container for phrasing content -->
+                    <!---- css class: small-bold ---->
+                    <span class="small-bold">End date</span>
+                    <br> <!-- br (break) - next line -->
+                    <!-- span - generic inline container for phrasing content -->
+                    <!-- send in variable end date -->
+                    <span>9/16/21</span>
+                </div>
+
+            </div> <!-- end white-frame -->
+
+            <!-- div (division) - css class: white-frame -->
+            <!-- the white and round corner frame with the green border -->
+            <div class="white-frame">
+
+                <!-- title -->
+                <!-- b (bold) -->
+                <b>
+                    <!-- span - generic inline container for phrasing content -->
+                    <!---- css class: green-text ---->
+                    <span class="green-text">
+                        Cubicle #
+                    </span>
+                    <!-- span - generic inline container for phrasing content -->
+                    <!---- css class: green-text ---->
+                    <!---- id for JS to send in variable cubicle number -->
+                    <span class="green-text" id="cubicle">
+                        12
+                    </span>
+                </b>
+
+                <br> <!-- br (break) - next line -->
+
+                <!-- div (division) - css class: date-block -->
+                <!-- for lining up the dates -->
+                <div class="date-block">
+                    <!-- span - generic inline container for phrasing content -->
+                    <!---- css class: small-bold ---->
+                    <span class="small-bold">Start date</span>
+                    <br> <!-- br (break) - next line -->
+                    <!-- span - generic inline container for phrasing content -->
+                    <!-- send in variable start date -->
+                    <span>12/12/21</span>
+                </div>
+
+                <!-- div (division) - css class: date-block -->
+                <!-- for lining up the dates -->
+                <div class="date-block">
+                    <!-- span - generic inline container for phrasing content -->
+                    <!---- css class: small-bold ---->
+                    <span class="small-bold">End date</span>
+                    <br> <!-- br (break) - next line -->
+                    <!-- span - generic inline container for phrasing content -->
+                    <!-- send in variable end date -->
+                    <span>3/16/22</span>
+                </div>
+
+            </div> <!-- end white-frame -->
+
+            <!-- form -->
+            <!-- for the buttons inside to act 'formaction' linking to the other pages -->
+            <form>
+                
+                <!-- div (division) - css class: flex-wrap -->
+                <!-- for buttons to auto take the full width and/or divide the space -->
+                <div class="flex-wrap">
+
+                    <!-- cancel a reservation button -->
+                    <!---- type defining button type ---->
+                    <!---- css class: white-button ---->
+                    <!---- formaction links to user-cancel page ---->
+                    <button type ="submit" class="white-button" formaction="user-cancel.html">
+                        CANCEL A RESERVATION
+                    </button>
+
+                    <!-- main menu button -->
+                    <!---- type defining button type ---->
+                    <!---- css class: green-button ---->
+                    <!---- formaction links to user-main page ---->
+                    <button type ="submit" class="green-button" formaction="user-main.html">
+                        MAIN MENU
+                    </button>
+                    
+                </div> <!-- end flex-wrap -->
+
+            </form> <!-- end form-->
+
+            <!-- <script>
                 var reservationCount = 5;
 
                 for (let i = 0; i < reservationCount; i++)
@@ -102,9 +234,9 @@
                     // find the element with this id in the HTML and add the p_tag
                     document.getElementById("reservations").appendChild(p_tag);       
                 }    
-            </script>   
-            
-        </div> <!-- end green-frame -->
+            </script> --> 
+
+        </div> <!-- end content-frame -->
 
     </div> <!-- end main-frame -->
 
@@ -115,7 +247,7 @@
         <p>
 
             <!-- b (bold) -->
-            <b>X-men | Commerce Bank Project</b>
+            <b>X-men</b> | <b>Commerce Bank Project</b>
             
             <br> <!-- br (break) - next line -->
 
