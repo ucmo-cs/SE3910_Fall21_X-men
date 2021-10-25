@@ -42,70 +42,76 @@
 
     <!-- div (division) - css class: main-frame -->
     <!-- the outermost frame for
-    centering the content
-    limiting the width
-    set the font -->
+    centering the content and limiting the width -->
     <div class="main-frame">
 
-        <!-- div (division) - css class: green-frame -->
-        <!-- the green and round corner frame -->
-        <div class="green-frame">
+        <!-- div (division) - css class: content-frame -->
+        <!-- wrapping up the content (frames and buttons) 
+        for keeping them in the vertical center
+        also set the 100% width -->
+        <div class="content-frame">
 
-            <!-- title in h1 (heading level 1) style -->
-            <h1>Hotel Cubicle Reservation</h1>
+            <!-- div (division) - css class: green-frame -->
+            <!-- the green and round corner frame -->
+            <div class="green-frame">
 
-            <!-- form for the user to input-->
-            <!---- action: send to the user-main after submit ---->
-            <form action="user-main.html">
+                <!-- title in h1 (heading level 1) style -->
+                <h1>Hotel Cubicle Reservation</h1>
 
-                <!-- lable - for user ID input -->
-                <!-- when the label is clicked, it will focus to the input field-->
-                <label for="userID">User ID</label>
-				
-                <br> <!-- br (break) - next line -->
-				
-                <!-- user ID input field -->
-                <!---- type defining input type ---->
-                <!---- id for JS control ---->
-                <!---- name for sending data ---->
-                <input type="text" id="userID" name="userID">
-                
-                <br> <!-- br (break) - next line -->
+                <!-- form for the user to input-->
+                <!---- action: send to the user-main after submit ---->
+                <form action="user-main.html">
 
-                <!-- lable - for password input -->
-                <!-- when the label is clicked, it will focus to the input field-->
-                <label for="password">Password</label>
-				
-                <br> <!-- br (break) - next line -->
-				
-                <!-- password input field -->
-                <!---- type defining input type ---->
-                <!---- id for JS control ---->
-                <!---- name for sending data ---->
-                <input type="password" id="password" name="password">
+                    <!-- lable - for user ID input -->
+                    <!-- when the label is clicked, it will focus to the input field-->
+                    <label for="userID">User ID</label>
+                    
+                    <br> <!-- br (break) - next line -->
+                    
+                    <!-- user ID input field -->
+                    <!---- type defining input type ---->
+                    <!---- id for JS control ---->
+                    <!---- name for sending data ---->
+                    <input type="text" id="userID" name="userID">
+                    
+                    <br> <!-- br (break) - next line -->
 
-                <!-- next line twice for a bigger space in between -->
-                <br> <!-- br (break) - next line -->
-                <br> <!-- br (break) - next line -->
+                    <!-- lable - for password input -->
+                    <!-- when the label is clicked, it will focus to the input field-->
+                    <label for="password">Password</label>
+                    
+                    <br> <!-- br (break) - next line -->
+                    
+                    <!-- password input field -->
+                    <!---- type defining input type ---->
+                    <!---- id for JS control ---->
+                    <!---- name for sending data ---->
+                    <input type="password" id="password" name="password">
 
-                <!-- div (division) - css class: flex-wrap -->
-                <!-- for buttons to auto take the full width and/or divide the space -->
-                <div class="flex-wrap">
-                
-                    <!-- sign-in button -->
-                    <!---- type defining button type ---->
-                    <!---- css class: button-in-green-frame ---->
-                    <button type ="submit" class="button-in-green-frame">Sign-in</button>
+                    <!-- next line twice for a bigger space in between -->
+                    <br> <!-- br (break) - next line -->
+                    <br> <!-- br (break) - next line -->
 
-                    <!-- Admin Sign-in button
-                    <button type ="submit" class="button-in-green-frame">Admin Sign-in</button>
-                    -->
+                    <!-- div (division) - css class: flex-wrap -->
+                    <!-- for buttons to auto take the full width and/or divide the space -->
+                    <div class="flex-wrap">
+                    
+                        <!-- sign-in button -->
+                        <!---- type defining button type ---->
+                        <!---- css class: button-in-green-frame ---->
+                        <button type ="submit" class="button-in-green-frame">Sign-in</button>
 
-                </div> <!-- end flex-wrap -->
+                        <!-- Admin Sign-in button 
+                        <button type ="submit" class="button-in-green-frame">Admin Sign-in</button>
+                        -->
+                        
+                    </div> <!-- end flex-wrap -->
 
-            </form> <!-- end form -->
+                </form> <!-- end form -->
 
-        </div> <!-- end green-frame -->
+            </div> <!-- end green-frame -->
+            
+        </div> <!-- end content-frame -->
 
     </div> <!-- end main-frame -->
 
@@ -116,7 +122,7 @@
         <p>
 
             <!-- b (bold) -->
-            <b>X-men | Commerce Bank Project</b>
+            <b>X-men</b> | <b>Commerce Bank Project</b>
             
             <br> <!-- br (break) - next line -->
 
