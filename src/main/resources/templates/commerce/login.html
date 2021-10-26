@@ -19,7 +19,7 @@
 <!-- html (HyperText Markup Language) -->
 <!---- web language: English ---->
 <!---- id for the background-image control in CSS ---->
-<html lang="en" id="login-page">
+<html lang="en" id="login-page" xmlns:th="http://www.thymeleaf.org">
 
 <!-- head - meta, title, and the linking CSS and JS goes here -->
 <head>
@@ -33,7 +33,7 @@
     <!-- link the CSS file -->
     <!---- rel (relationship): stylesheet ---->
     <!---- href (hypertext reference): file location/name ---->
-    <link rel="stylesheet" href="style.css">
+    <link type="text/css" rel="stylesheet" href="../static/css/style.css" th:href="@{../css/style.css}">
 
 </head> <!-- end head -->
 
@@ -60,7 +60,7 @@
 
                 <!-- form for the user to input-->
                 <!---- action: send to the user-main after submit ---->
-                <form action="user-main.html">
+                <form action="main">
 
                     <!-- lable - for user ID input -->
                     <!-- when the label is clicked, it will focus to the input field-->

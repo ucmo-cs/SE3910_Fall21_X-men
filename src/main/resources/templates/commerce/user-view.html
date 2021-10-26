@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<!--
+    User View Page
+
+        SE 3910 Software Engineering - Fall 2021
+        Instructor: Taeghyun Kang
+
+        Team: X-men
+            Bryant Michael Belino Bugna
+            Noah Erb
+            De-Shian Lin
+            Austin Loucks
+            Kathryn McMeen
+        
+        Commerce Bank Project
+        Hotel Cubicle Reservation System
+-->
+
+<!-- html (HyperText Markup Language) -->
+<!---- web language: English ---->
+<!---- id for the background-image control in CSS ---->
+<html lang="en" id="user-view-page" xmlns:th="http://www.thymeleaf.org">
+
+<!-- head - meta, title, and the linking CSS and JS goes here -->
+<head>
+
+    <!-- set the character encoding to UTF-8 -->
+    <meta charset="UTF-8">
+
+    <!-- web title -->
+    <title>View | Hotel Cubicle Reservation System</title>
+
+    <!-- link the CSS file -->
+    <!---- rel (relationship): stylesheet ---->
+    <!---- href (hypertext reference): file location/name ---->
+    <link rel="stylesheet" href="../static/css/style.css" th:href="@{../css/style.css}">
+
+</head> <!-- end head -->
+
+<!-- body - almost all the page content goes here -->
+<body>
+
+    <!-- div (division) - css class: main-frame -->
+    <!-- the outermost frame for
+    centering the content and limiting the width -->
+    <div class="main-frame">
+
+        <!-- div (division) - css class: content-frame -->
+        <!-- wrapping up the content (frames and buttons) 
+        for keeping them in the vertical center
+        also set the 100% width -->
+        <div class="content-frame">
+
+            <!-- div (division) - css class: green-frame -->
+            <!-- the green and round corner frame -->
+            <div class="green-frame">
+
+                <!-- title in h1 (heading level 1) style -->
+                <h1>Your Reservations</h1>
+                
+                <!-- p (paragraph) - css class: userNameID -->
+                <p class="userNameID">
+
+                    <!-- span - generic inline container for phrasing content -->
+                    <!---- id for JS to send in variable name and ID ---->
+                    <span id="name">Lason</span>
+                    · 
+                    <span id="ID">41645645</span>
+
+                </p> <!-- end userNameID -->
+            
+            </div> <!-- end green-frame -->
+
+            <!-- div (division) - css class: white-frame -->
+            <!-- the white and round corner frame with the green border -->
+            <div class="white-frame">
+
+                <!-- title -->
+                <!-- b (bold) -->
+                <b>
+                    <!-- span - generic inline container for phrasing content -->
+                    <!---- css class: green-text ---->
+                    <span class="green-text">
+                        Cubicle #
+                    </span>
+                    <!-- span - generic inline container for phrasing content -->
+                    <!---- css class: green-text ---->
+                    <!---- id for JS to send in variable cubicle number -->
+                    <span class="green-text" id="cubicle">
+                        1
+                    </span>
+                </b>
+
+                <br> <!-- br (break) - next line -->
+
+                <!-- div (division) - css class: date-block -->
+                <!-- for lining up the dates -->
+                <div class="date-block">
+                    <!-- span - generic inline container for phrasing content -->
+                    <!---- css class: small-bold ---->
+                    <span class="small-bold">Start date</span>
+                    <br> <!-- br (break) - next line -->
+                    <!-- span - generic inline container for phrasing content -->
+                    <!-- send in variable start date -->
+                    <span>9/16/21</span>
+                </div>
+
+                <!-- div (division) - css class: date-block -->
+                <!-- for lining up the dates -->
+                <div class="date-block">
+                    <!-- span - generic inline container for phrasing content -->
+                    <!---- css class: small-bold ---->
+                    <span class="small-bold">End date</span>
+                    <br> <!-- br (break) - next line -->
+                    <!-- span - generic inline container for phrasing content -->
+                    <!-- send in variable end date -->
+                    <span>9/16/21</span>
+                </div>
+
+            </div> <!-- end white-frame -->
+
+            <!-- div (division) - css class: white-frame -->
+            <!-- the white and round corner frame with the green border -->
+            <div class="white-frame">
+
+                <!-- title -->
+                <!-- b (bold) -->
+                <b>
+                    <!-- span - generic inline container for phrasing content -->
+                    <!---- css class: green-text ---->
+                    <span class="green-text">
+                        Cubicle #
+                    </span>
+                    <!-- span - generic inline container for phrasing content -->
+                    <!---- css class: green-text ---->
+                    <!---- id for JS to send in variable cubicle number -->
+                    <span class="green-text" id="cubicle">
+                        12
+                    </span>
+                </b>
+
+                <br> <!-- br (break) - next line -->
+
+                <!-- div (division) - css class: date-block -->
+                <!-- for lining up the dates -->
+                <div class="date-block">
+                    <!-- span - generic inline container for phrasing content -->
+                    <!---- css class: small-bold ---->
+                    <span class="small-bold">Start date</span>
+                    <br> <!-- br (break) - next line -->
+                    <!-- span - generic inline container for phrasing content -->
+                    <!-- send in variable start date -->
+                    <span>12/12/21</span>
+                </div>
+
+                <!-- div (division) - css class: date-block -->
+                <!-- for lining up the dates -->
+                <div class="date-block">
+                    <!-- span - generic inline container for phrasing content -->
+                    <!---- css class: small-bold ---->
+                    <span class="small-bold">End date</span>
+                    <br> <!-- br (break) - next line -->
+                    <!-- span - generic inline container for phrasing content -->
+                    <!-- send in variable end date -->
+                    <span>3/16/22</span>
+                </div>
+
+            </div> <!-- end white-frame -->
+
+            <!-- form -->
+            <!-- for the buttons inside to act 'formaction' linking to the other pages -->
+            <form>
+                
+                <!-- div (division) - css class: flex-wrap -->
+                <!-- for buttons to auto take the full width and/or divide the space -->
+                <div class="flex-wrap">
+
+                    <!-- cancel a reservation button -->
+                    <!---- type defining button type ---->
+                    <!---- css class: white-button ---->
+                    <!---- formaction links to user-cancel page ---->
+                    <button type ="submit" class="white-button" formaction="/main/cancel">
+                        CANCEL A RESERVATION
+                    </button>
+
+                    <!-- main menu button -->
+                    <!---- type defining button type ---->
+                    <!---- css class: green-button ---->
+                    <!---- formaction links to user-main page ---->
+                    <button type ="submit" class="green-button" formaction="/main">
+                        MAIN MENU
+                    </button>
+                    
+                </div> <!-- end flex-wrap -->
+
+            </form> <!-- end form-->
+
+            <!-- <script>
+                var reservationCount = 5;
+
+                for (let i = 0; i < reservationCount; i++)
+                {
+                    // create a <p> </p> element
+                    var p_tag = document.createElement("p");
+
+                    // create a <span> </span> element
+                    var span_name = document.createElement("span");
+
+                    // create the text to add inside the span
+                    var name_content = document.createTextNode("Lason");
+
+                    // set span id to name
+                    // <span id = "name"> </span>
+                    span_name.id = "name" 
+
+                    // add the text into the span 
+                    // <span id = name>Lason</span>
+                    span_name.appendChild(name_content);
+
+                    // create a "." text
+                    var dot_text = document.createTextNode(".");
+                    
+                    // same format to create a new span as previous
+                    var span_id = document.createElement("span");
+                    var id_content = document.createTextNode("41645645");
+                    span_id.id = "ID";
+                    span_id.appendChild(id_content);
+
+                    // add the spans and text into the <p> tag
+                    p_tag.appendChild(span_name);
+                    p_tag.appendChild(dot_text);
+                    p_tag.appendChild(span_id);
+
+                    // find the element with this id in the HTML and add the p_tag
+                    document.getElementById("reservations").appendChild(p_tag);       
+                }    
+            </script> --> 
+
+        </div> <!-- end content-frame -->
+
+    </div> <!-- end main-frame -->
+
+    <!-- footer - typically contains the additional info or links -->
+    <footer>
+
+        <!-- p (paragraph) -->
+        <p>
+
+            <!-- b (bold) -->
+            <b>X-men</b> | <b>Commerce Bank Project</b>
+            
+            <br> <!-- br (break) - next line -->
+
+            SE 3910 Software Engineering - Fall 2021
+
+        </p> <!-- end p -->
+
+    </footer> <!-- end footer -->
+
+</body> <!-- end body -->
+
+</html> <!-- end html -->

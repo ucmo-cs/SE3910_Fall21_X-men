@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<!--
+    User Cancel Page
+
+        SE 3910 Software Engineering - Fall 2021
+        Instructor: Taeghyun Kang
+
+        Team: X-men
+            Bryant Michael Belino Bugna
+            Noah Erb
+            De-Shian Lin
+            Austin Loucks
+            Kathryn McMeen
+        
+        Commerce Bank Project
+        Hotel Cubicle Reservation System
+-->
+
+<!-- html (HyperText Markup Language) -->
+<!---- web language: English ---->
+<!---- id for the background-image control in CSS ---->
+<html lang="en" id="user-cancel-page" xmlns:th="http://www.thymeleaf.org">
+
+<!-- head - meta, title, and the linking CSS and JS goes here -->
+<head>
+
+    <!-- set the character encoding to UTF-8 -->
+    <meta charset="UTF-8">
+
+    <!-- web title -->
+    <title>Cancel | Hotel Cubicle Reservation System</title>
+
+    <!-- link the CSS file -->
+    <!---- rel (relationship): stylesheet ---->
+    <!---- href (hypertext reference): file location/name ---->
+    <link rel="stylesheet" href="../static/css/style.css" th:href="@{../css/style.css}">
+
+</head> <!-- end head -->
+
+<!-- body - almost all the page content goes here -->
+<body>
+
+    <!-- div (division) - css class: main-frame -->
+    <!-- the outermost frame for
+    centering the content and limiting the width -->
+    <div class="main-frame">
+
+        <!-- div (division) - css class: content-frame -->
+        <!-- wrapping up the content (frames and buttons) 
+        for keeping them in the vertical center
+        also set the 100% width -->
+        <div class="content-frame">
+
+            <!-- div (division) - css class: green-frame -->
+            <!-- the green and round corner frame -->
+            <div class="green-frame">
+
+                <!-- title in h1 (heading level 1) style -->
+                <h1>Your Reservations</h1>
+                
+                <!-- p (paragraph) - css class: userNameID -->
+                <p class="userNameID">
+
+                    <!-- span - generic inline container for phrasing content -->
+                    <!---- id for JS to send in variable name and ID ---->
+                    <span id="name">Lason</span>
+                    · 
+                    <span id="ID">41645645</span>
+
+                </p> <!-- end userNameID -->
+            
+            </div> <!-- end green-frame -->
+
+
+            <!-- reservations loop -->
+            <div id="reservations"></div>
+
+            <script>
+                var reservationCount = 5;
+
+                for (let i = 0; i < reservationCount; i++)
+                {
+                    // create a <div> </div> element
+                    var white_frame = document.createElement("div");
+                    // set div class
+                    // <div class = "white-frame"> </div>
+                    white_frame.className = "white-frame";
+
+                    // create a <span> </span> element
+                    var cubicle_number = document.createElement("span");
+                    // set span class
+                    // <span class = "green-text"> </span>
+                    cubicle_number.className = "green-text";
+
+                    // create the text to add inside the span
+                    var cubicle_number_text = document.createTextNode("Cubicle #1");
+
+                    // add the text into the span 
+                    // <span span class="green-text">Cubicle #1</span>
+                    cubicle_number.appendChild(cubicle_number_text);
+
+                    /* same format to create a new elements as previous */
+
+                    // start date block
+                    var start_date_block = document.createElement("div");
+                    start_date_block.className = "date-block";
+                    
+                    // start date title
+                    var start_date_title = document.createElement("span");
+                    start_date_title.className = "small-bold";
+                    var start_date_title_text = document.createTextNode("Start date");
+                    start_date_title.appendChild(start_date_title_text);
+    
+                    // start date
+                    var start_date = document.createElement("span");
+                    var start_date_text = document.createTextNode("9/12/21");
+                    start_date.appendChild(start_date_text);
+
+                    // add up to start the date block
+                    start_date_block.appendChild(start_date_title);
+                    var br = document.createElement("br");
+                    start_date_block.appendChild(br);
+                    start_date_block.appendChild(start_date);
+
+                    // end date block
+                    var end_date_block = document.createElement("div");
+                    end_date_block.className = "date-block";
+
+                    // end date title
+                    var end_date_title = document.createElement("span");
+                    end_date_title.className = "small-bold";
+                    var end_date_title_text = document.createTextNode("End date");
+                    end_date_title.appendChild(end_date_title_text);
+                    
+                    // end date
+                    var end_date = document.createElement("span");
+                    var end_date_text = document.createTextNode("9/12/21");
+                    end_date.appendChild(end_date_text);
+
+                    // add up to end the date block
+                    end_date_block.appendChild(end_date_title);
+                    var br = document.createElement("br");
+                    end_date_block.appendChild(br);
+                    end_date_block.appendChild(end_date);
+                    
+                    // add up to the withe frame
+                    white_frame.appendChild(cubicle_number);
+                    var br = document.createElement("br");
+                    white_frame.appendChild(br);
+                    white_frame.appendChild(start_date_block);
+                    white_frame.appendChild(end_date_block);
+
+                    // find the element with this id in the HTML and add the white frame
+                    document.getElementById("reservations").appendChild(white_frame);       
+                }    
+            </script>
+            <!-- end reservations loop -->
+
+            <!-- form -->
+            <!-- for the buttons inside to act 'formaction' linking to the other pages -->
+            <form>
+                
+                <!-- div (division) - css class: flex-wrap -->
+                <!-- for buttons to auto take the full width and/or divide the space -->
+                <div class="flex-wrap">
+
+                    <!-- view reservations button -->
+                    <!---- type defining button type ---->
+                    <!---- css class: white-button ---->
+                    <!---- formaction links to user-view page ---->
+                    <button type ="submit" class="white-button" formaction="/main/view">
+                        VIEW RESERVATIONS
+                    </button>
+
+                    <!-- main menu button -->
+                    <!---- type defining button type ---->
+                    <!---- css class: green-button ---->
+                    <!---- formaction links to user-main page ---->
+                    <button type ="submit" class="green-button" formaction="/main">
+                        MAIN MENU
+                    </button>
+                    
+                </div> <!-- end flex-wrap -->
+
+            </form> <!-- end form-->
+
+            </div> <!-- end green-frame -->
+
+        </div> <!-- end content-frame -->
+
+    </div> <!-- end main-frame -->
+
+    <!-- footer - typically contains the additional info or links -->
+    <footer>
+
+        <!-- p (paragraph) -->
+        <p>
+
+            <!-- b (bold) -->
+            <b>X-men</b> | <b>Commerce Bank Project</b>
+            
+            <br> <!-- br (break) - next line -->
+
+            SE 3910 Software Engineering - Fall 2021
+
+        </p> <!-- end p -->
+
+    </footer> <!-- end footer -->
+
+</body> <!-- end body -->
+
+</html> <!-- end html -->
