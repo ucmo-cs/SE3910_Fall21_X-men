@@ -19,7 +19,6 @@
 <!-- html (HyperText Markup Language) -->
 <!---- web language: English ---->
 <!---- id for the background-image control in CSS ---->
-<!---- xmlns (XML namespaces) :th to declare a thymeleaf namespace ---->
 <html lang="en" id="user-create-page" xmlns:th="http://www.thymeleaf.org">
 
 <!-- head - meta, title, and the linking CSS and JS goes here -->
@@ -33,8 +32,8 @@
 
     <!-- link the CSS file -->
     <!---- rel (relationship): stylesheet ---->
-    <!---- th (thymeleaf) :href (hypertext reference): file location/name ---->
-    <link rel="stylesheet" th:href="@{../css/style.css}">
+    <!---- href (hypertext reference): file location/name ---->
+    <link rel="stylesheet" href="../static/css/style.css" th:href="@{../css/style.css}">
 
 </head> <!-- end head -->
 
@@ -61,6 +60,28 @@
 
                 <!-- form for the user to input-->
                 <form>
+
+                    <!-- label - for ID input -->
+                    <!-- when the label is clicked, it will focus to the input field -->
+                    <label for="ID">ID</label>
+                    <!-- ID input field -->
+                    <!---- type defining input type ---->
+                    <!---- id for JS control ---->
+                    <!---- name for sending data ---->
+                    <input type="text" id="ID" name="ID">
+
+                    <br> <!-- br (break) - next line -->
+
+                    <!-- label - for name input -->
+                    <!-- when the label is clicked, it will focus to the input field -->
+                    <label for="name">Name</label>
+                    <!-- name input field -->
+                    <!---- type defining input type ---->
+                    <!---- id for JS control ---->
+                    <!---- name for sending data ---->
+                    <input type="text" id="name" name="name">
+
+                    <br> <!-- br (break) - next line -->
 
                     <!-- label - for start day input -->
                     <!-- when the label is clicked, it will focus to the input field -->
@@ -98,9 +119,9 @@
                     </div> <!-- end flex-wrap -->
 
                     <!-- p (paragraph) -->
-                    <!---- id for JS to send in error message ex. Please fill all fields! ---->
-                    <!---- css class: error-message-in-green-frame ---->
-                    <p id="error-message" class="error-message-in-green-frame">
+                    <!---- id for JS to send in "Please fill all fields!" when there is an empty field ---->
+                    <!---- id for CSS with a different text style ---->
+                    <p id="please-fill-all">
                         <!-- space for holding an empty space -->
                         <!---- & is the escape character of html ---->
                         <!---- &nbsp; is space (Non-Breaking Space) ---->
@@ -115,8 +136,8 @@
                     <!---- name for sending data ---->
                     <select id="cubicle" name="cubicle">
                         <!-- option list inside the drop-down -->
-                        <option value="12">CUBICLE #12 : 9/29 - 10/3 </option>
-                        <option value="13">CUBICLE #13 : 11/1 - 11/7 </option>
+                        <option value="cubicle12">Cubicle #12</option>
+                        <option value="cubicle13">Cubicle #13</option>
                     </select> <!-- end cubicles select -->
 
                     <br> <!-- br (break) - next line -->
