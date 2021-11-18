@@ -37,10 +37,9 @@
 
 </head> <!-- end head -->
 
-
-
 <!-- body - almost all the page content goes here -->
 <body>
+
     <!-- div (division) - css class: main-frame -->
     <!-- the outermost frame for
     centering the content and limiting the width -->
@@ -60,7 +59,7 @@
                 <h1>Please enter the following</h1>
 
                 <!-- form for the user to input-->
-                <form method="post">
+                <form>
 
                     <!-- label - for ID input -->
                     <!-- when the label is clicked, it will focus to the input field -->
@@ -113,7 +112,7 @@
                         <!-- view available cubicles button -->
                         <!---- type defining button type ---->
                         <!---- css class: button-in-green-frame ---->
-                        <button type ="submit" name = "view" class="button-in-green-frame">
+                        <button type ="submit" class="button-in-green-frame">
                             VIEW AVAILABLE CUBICLES
                         </button>
 
@@ -137,7 +136,8 @@
                     <!---- name for sending data ---->
                     <select id="cubicle" name="cubicle">
                         <!-- option list inside the drop-down -->
-                        <option th:each="cubicle : ${cubicles}" th:value="${cubicle.getCubicleID()}" th:text="'Cubicle #' + ${cubicle.cubicleID} + ' ' + ${cubicle.getSDate()} + ' - ' + ${cubicle.getEDate()}"></option>
+                        <option value="cubicle12">Cubicle #12</option>
+                        <option value="cubicle13">Cubicle #13</option>
                     </select> <!-- end cubicles select -->
 
                     <br> <!-- br (break) - next line -->
@@ -149,7 +149,7 @@
                         <!-- reserve cubicle button -->
                         <!---- type defining button type ---->
                         <!---- css class: button-in-green-frame ---->
-                        <button type ="submit" name = "reserve" class="button-in-green-frame">
+                        <button type ="submit" class="button-in-green-frame">
                             RESERVE CUBICLE
                         </button>
 
@@ -157,13 +157,10 @@
                         <!---- type defining button type ---->
                         <!---- css class: button-in-green-frame ---->
                         <!---- formaction links to user-main page ---->
-                        </form>
-                    <form>
-                        <button type ="submit" name = "back" class="button-in-green-frame" formaction="/main">
+                        <button type ="submit" class="button-in-green-frame" formaction="/main">
                             BACK
                         </button>
-                    </form>
-
+                        
                     </div> <!-- end flex-wrap -->
 
                 </form> <!-- end form -->
@@ -191,63 +188,6 @@
 
     </footer> <!-- end footer -->
 
-
-    <script>
-        // setting the minimum start/end days not earlier than today
-        var today = new Date();
-        var dd = today.getDate();
-        var mm = today.getMonth() + 1;
-        var yyyy = today.getFullYear();
-
-        if (dd < 10) {
-            dd = '0' + dd;
-        }
-
-        if (mm < 10) {
-            mm = '0' + mm;
-        }
-
-
-        today = yyyy + '-' + mm + '-' + dd;
-        document.getElementById("startDay").setAttribute("min", today);
-        document.getElementById("endDay").setAttribute("min", today);
-
-        // setting the latest end date no more than 6 months from today
-        today = new Date();
-
-        var newDate = new Date(today.setMonth(today.getMonth()+6));
-        dd = newDate.getDate();
-        mm = newDate.getMonth() + 1;
-        yyyy = newDate.getFullYear();
-
-        if (dd < 10) {
-            dd = '0' + dd;
-        }
-
-        if (mm < 10) {
-            mm = '0' + mm;
-        }
-        newDate = yyyy + '-' + mm + '-' + dd;
-        document.getElementById("endDay").setAttribute("max", newDate );
-
-        // setting the start date maximum to no more than 3 months later
-        today = new Date();
-        newDate = new Date(today.setMonth(today.getMonth()+3));
-        dd = newDate.getDate();
-        mm = newDate.getMonth() + 1;
-        yyyy = newDate.getFullYear();
-
-        if (dd < 10) {
-            dd = '0' + dd;
-        }
-
-        if (mm < 10) {
-            mm = '0' + mm;
-        }
-        newDate = yyyy + '-' + mm + '-' + dd;
-
-        document.getElementById("startDay").setAttribute("max", newDate);
-    </script>
 </body> <!-- end body -->
 
 </html> <!-- end html -->

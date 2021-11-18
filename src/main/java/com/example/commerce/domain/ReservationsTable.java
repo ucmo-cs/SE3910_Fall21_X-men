@@ -26,26 +26,26 @@ public class ReservationsTable {
 
     public String getReservationID() { return reservationID; }
 
-    private void setReservationID(String reservationID) { this.reservationID = reservationID; }
+    public void setReservationID(String reservationID) { this.reservationID = reservationID; }
 
     public String getReservationName() { return name; }
 
-    private void setName(String name) { this.name = name; }
+    public void setName(String name) { this.name = name; }
 
     public String getReservationSDate() { return sDate; }
 
-    private void setsDate(String sDate) { this.sDate = sDate; }
+    public void setsDate(String sDate) { this.sDate = sDate; }
 
     public String getReservationEDate() { return eDate; }
 
-    private void setEDate(String eDate) { this.eDate = eDate; }
+    public void setEDate(String eDate) { this.eDate = eDate; }
 
     public String getReservationCubicleID() { return cubicleID; }
 
-    private void setCubicleID(String cubicleID) { this.cubicleID = cubicleID; }
+    public void setCubicleID(String cubicleID) { this.cubicleID = cubicleID; }
 
     public String getReservationUserID() { return userID; }
 
-    private void setUserID(String userID) { this.userID = userID; }
+    public void setUserID(String userID) { this.userID = userID; }
 
 }

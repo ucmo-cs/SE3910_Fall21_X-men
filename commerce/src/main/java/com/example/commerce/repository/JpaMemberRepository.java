@@ -48,6 +48,4 @@ public class JpaMemberRepository implements MemberRepository {
     public void clearstore() {
 
     }
-
-
 }

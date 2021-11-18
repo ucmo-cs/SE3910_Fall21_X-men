@@ -25,4 +25,14 @@ public class CubicleTable {
     public String getEDate() { return eDate; }
 
     private void setEDate(String eDate) { this.eDate = eDate; }
+
+    @Override
+    public String toString()
+    {
+        return "CubicleTable{" +
+                "cubicleID='" + cubicleID + '\'' +
+                ", sDate='" + sDate + '\'' +
+                ", eDate='" + eDate + '\'' +
+                '}';
+    }
 }

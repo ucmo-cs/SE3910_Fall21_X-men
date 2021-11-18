@@ -2,6 +2,7 @@ package com.example.commerce.domain;
 
 import javax.persistence.*;
 
+@Entity
 public class UserTable {
 
     @Id
