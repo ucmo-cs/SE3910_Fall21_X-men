@@ -349,6 +349,10 @@
         /* border */
         border: 2.4px solid #4EA800;
         /* border-width  border-style  border-color */
+
+        /* shadow */
+        box-shadow: 4px 4px 8px rgba(0, 0, 0, .4);
+        /* offset-x  offset-y  blur-radius  color-rgba(red, green, blue, alpha) */
     }
 
     .green-button {
@@ -368,6 +372,10 @@
         /* set the border to none */
         /* originally there are borders for a button */
         border: none;
+
+        /* shadow */
+        box-shadow: 4px 4px 8px rgba(0, 0, 0, .4);
+        /* offset-x  offset-y  blur-radius  color-rgba(red, green, blue, alpha) */
     }
 
     /* white & green buttons : hover & active effect */
@@ -399,6 +407,40 @@
         outline: none;
     }
 
+    .cancel-block {
+        float: right;
+    }
+
+    .cancel-button {
+        margin-top: -1.5em;
+        margin-right: .4em;
+
+        /* space to the content inside */
+        padding: .8em 1.8em;
+        /* top/bottom  left/right */
+
+        /* background color: red */
+        background-color: #D9001B;
+
+        /* text color: white */
+        color: #FFF;
+
+        /* set the border to none */
+        /* originally there are borders for a button */
+        border: none;
+    }
+
+    .cancel-button:hover,
+    .cancel-button:active {
+        /* shadow */
+        box-shadow: 4px 4px 8px rgba(0, 0, 0, .4);
+        /* offset-x  offset-y  blur-radius  color-rgba(red, green, blue, alpha) */
+        
+        /* text glow effect */
+        text-shadow: 0 0 2px #FFF;
+        /* h-shadow(horizontal shadow)  v-shadow(vertical shadow)  blur-radius  color */
+    }
+
 /********** end buttons **********/
 
 
@@ -427,8 +469,8 @@
         padding: 12px;
     }
 
-    /* style for "Please fill all fields!" in user create page */
-    #please-fill-all {
+    /* style for error messages */
+    .error-message-in-green-frame {
         /* negative margin to top brings it closer to the upper item */
         margin-top: -1.8em;
         
