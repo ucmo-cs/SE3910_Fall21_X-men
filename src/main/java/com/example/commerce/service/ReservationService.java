@@ -21,4 +21,10 @@ public class ReservationService
         reservationRepository.saveReservation(reservationsTable);
         return reservationsTable.getReservationID();
     }
+
+    public String delete(String id)
+    {
+        reservationRepository.cancelReservation(id);
+        return id;
+    }
 }

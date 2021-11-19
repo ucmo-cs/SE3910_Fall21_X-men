@@ -20,4 +20,12 @@ public class JPAReservationRepository implements ReservationRepository
         em.persist(reservationsTable);
         return reservationsTable;
     }
+
+    @Override
+    public int cancelReservation(String id)
+    {
+        Query query = em.createQuery("delete from ReservationsTable r where r.reservationID = :value");
+        int deletedRows = query.setParameter("value", id).executeUpdate();
+        return deletedRows;
+    }
 }

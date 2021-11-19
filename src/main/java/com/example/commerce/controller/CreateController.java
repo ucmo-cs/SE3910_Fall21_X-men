@@ -41,6 +41,7 @@ public class CreateController
     {
         List<CubicleTable> availableCubicles = cubicleRepository.findAllCubiclesBetweenDates(form.getStartDay(), form.getEndDay());
         model.addAttribute("cubicles", availableCubicles);
+        // reservationService.delete("4");
         return "commerce/user-create";
     }
 
