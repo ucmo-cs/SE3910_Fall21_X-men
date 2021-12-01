@@ -1,9 +1,11 @@
 package com.example.commerce.repository;
 
+import com.example.commerce.domain.Member;
 import com.example.commerce.domain.ReservationsTable;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
+import java.util.List;
 
 public class JPAReservationRepository implements ReservationRepository
 {
@@ -27,5 +29,12 @@ public class JPAReservationRepository implements ReservationRepository
         Query query = em.createQuery("delete from ReservationsTable r where r.reservationID = :value");
         int deletedRows = query.setParameter("value", id).executeUpdate();
         return deletedRows;
+    }
+
+    @Override
+    public List<ReservationsTable> findAll() {
+        return em.createQuery("select r from ReservationsTable r" , ReservationsTable.class)
+                .getResultList();
+
     }
 }
