@@ -15,6 +15,9 @@ public class UserTable {
     @Column (name = "password")
     private String password;
 
+    @Column (name = "online")
+    private int online;
+
     public String getId() {
         return userid;
     }
@@ -32,4 +35,24 @@ public class UserTable {
     public String getPassword() { return password; }
 
     public void setPassword(String password) {this.password = password; }
+
+    public String getUserid()
+    {
+        return userid;
+    }
+
+    public void setUserid(String userid)
+    {
+        this.userid = userid;
+    }
+
+    public int getOnline()
+    {
+        return online;
+    }
+
+    public void setOnline(int online)
+    {
+        this.online = online;
+    }
 }

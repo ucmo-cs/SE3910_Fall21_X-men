@@ -4,6 +4,7 @@ package com.example.commerce;
 import com.example.commerce.repository.*;
 import com.example.commerce.service.MemberService;
 import com.example.commerce.service.ReservationService;
+import com.example.commerce.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -47,5 +48,16 @@ public class SpringConfig {
     public ReservationService reservationService()
     {
         return new ReservationService(reservationRepository());
+    }
+
+    @Bean
+    public JPALoginRepository loginRepository()
+    {
+        return new JPALoginRepository(em);
+    }
+
+    @Bean
+    public UserService userService() {
+        return new UserService(loginRepository());
     }
 }

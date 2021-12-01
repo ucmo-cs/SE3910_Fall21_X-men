@@ -1,3 +1,5 @@
+package com.example.commerce.controller;
+
 import com.example.commerce.repository.JPACubicleRepository;
 import com.example.commerce.repository.JPAReservationRepository;
 import com.example.commerce.service.ReservationService;

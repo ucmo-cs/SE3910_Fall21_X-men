@@ -6,11 +6,11 @@ CREATE TABLE userTable (
     password VARCHAR(250) DEFAULT NULL
 );
 
-INSERT INTO USER_TABLE (name, password) VALUES
-    ('Samantha Alister','C4LNhbQk'),
-    ('John Doe','RxLVf9qc'),
-    ('Karen Freed','9sDkMJbG'),
-    ('Will Bonds','RH5Wc8RF');
+INSERT INTO USER_TABLE (name, password, online) VALUES
+    ('Samantha Alister','C4LNhbQk', 0),
+    ('John Doe','RxLVf9qc', 0),
+    ('Karen Freed','9sDkMJbG', 0),
+    ('Will Bonds','RH5Wc8RF', 0);
 
 CREATE TABLE reservationTable (
     reservationID VARCHAR(250) NOT NULL,
