@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class LoginController
 {
-    @GetMapping("main/view")
+    @GetMapping("login")
     public String login(){
-        return "commerce/user-view";
+        return "commerce/login";
     }
 }
 
