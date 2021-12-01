@@ -74,7 +74,7 @@
 
             <!-- div (division) - css class: white-frame -->
             <!-- the white and round corner frame with the green border -->
-            <div class="white-frame">
+            <div th:each="reservations : ${reservations}" class="white-frame">
 
                 <!-- title -->
                 <!-- b (bold) -->
@@ -86,10 +86,7 @@
                     </span>
                     <!-- span - generic inline container for phrasing content -->
                     <!---- css class: green-text ---->
-                    <!---- id for JS to send in variable cubicle number -->
-                    <span class="green-text" id="cubicle">
-                        1
-                    </span>
+                    <span th:text="${reservations.getReservationCubicleID}" class="green-text"></span>
                 </b>
 
                 <br> <!-- br (break) - next line -->
@@ -103,7 +100,7 @@
                     <br> <!-- br (break) - next line -->
                     <!-- span - generic inline container for phrasing content -->
                     <!-- send in variable start date -->
-                    <span>9/16/21</span>
+                    <span th:text="${reservations.getReservationSDate}"></span>
                 </div>
 
                 <!-- div (division) - css class: date-block -->
@@ -115,55 +112,7 @@
                     <br> <!-- br (break) - next line -->
                     <!-- span - generic inline container for phrasing content -->
                     <!-- send in variable end date -->
-                    <span>9/16/21</span>
-                </div>
-
-            </div> <!-- end white-frame -->
-
-            <!-- div (division) - css class: white-frame -->
-            <!-- the white and round corner frame with the green border -->
-            <div class="white-frame">
-
-                <!-- title -->
-                <!-- b (bold) -->
-                <b>
-                    <!-- span - generic inline container for phrasing content -->
-                    <!---- css class: green-text ---->
-                    <span class="green-text">
-                        Cubicle #
-                    </span>
-                    <!-- span - generic inline container for phrasing content -->
-                    <!---- css class: green-text ---->
-                    <!---- id for JS to send in variable cubicle number -->
-                    <span class="green-text" id="cubicle">
-                        12
-                    </span>
-                </b>
-
-                <br> <!-- br (break) - next line -->
-
-                <!-- div (division) - css class: date-block -->
-                <!-- for lining up the start date -->
-                <div class="date-block">
-                    <!-- span - generic inline container for phrasing content -->
-                    <!---- css class: small-bold ---->
-                    <span class="small-bold">Start date</span>
-                    <br> <!-- br (break) - next line -->
-                    <!-- span - generic inline container for phrasing content -->
-                    <!-- send in variable start date -->
-                    <span>12/12/21</span>
-                </div>
-
-                <!-- div (division) - css class: date-block -->
-                <!-- for lining up the end date -->
-                <div class="date-block">
-                    <!-- span - generic inline container for phrasing content -->
-                    <!---- css class: small-bold ---->
-                    <span class="small-bold">End date</span>
-                    <br> <!-- br (break) - next line -->
-                    <!-- span - generic inline container for phrasing content -->
-                    <!-- send in variable end date -->
-                    <span>3/16/22</span>
+                    <span th:text="${reservations.getReservationEDate}"></span>
                 </div>
 
             </div> <!-- end white-frame -->
