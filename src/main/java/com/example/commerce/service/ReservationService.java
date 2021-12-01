@@ -1,9 +1,12 @@
 package com.example.commerce.service;
 
+import com.example.commerce.domain.Member;
 import com.example.commerce.domain.ReservationsTable;
 import com.example.commerce.repository.ReservationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Transactional
 public class ReservationService
@@ -26,5 +29,9 @@ public class ReservationService
     {
         reservationRepository.cancelReservation(id);
         return id;
+    }
+
+    public List<ReservationsTable> findReservations(){
+        return reservationRepository.findAll();
     }
 }
