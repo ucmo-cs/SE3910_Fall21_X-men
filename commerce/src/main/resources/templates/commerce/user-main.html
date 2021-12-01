@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--
-    User Main Page
+    User View Page
 
         SE 3910 Software Engineering - Fall 2021
         Instructor: Taeghyun Kang
@@ -19,7 +19,8 @@
 <!-- html (HyperText Markup Language) -->
 <!---- web language: English ---->
 <!---- id for the background-image control in CSS ---->
-<html lang="en" id="user-main-page" xmlns:th="http://www.thymeleaf.org">
+<!---- xmlns (XML namespaces) :th to declare a thymeleaf namespace ---->
+<html lang="en" id="user-view-page" xmlns:th="http://www.thymeleaf.org">
 
 <!-- head - meta, title, and the linking CSS and JS goes here -->
 <head>
@@ -28,12 +29,12 @@
     <meta charset="UTF-8">
 
     <!-- web title -->
-    <title>Main | Hotel Cubicle Reservation System</title>
+    <title>View | Hotel Cubicle Reservation System</title>
 
     <!-- link the CSS file -->
     <!---- rel (relationship): stylesheet ---->
-    <!---- href (hypertext reference): file location/name ---->
-    <link rel="stylesheet" href="../static/css/style.css" th:href="@{../css/style.css}">
+    <!---- th (thymeleaf) :href (hypertext reference): file location/name ---->
+    <link rel="stylesheet" th:href="@{../css/style.css}">
 
 </head> <!-- end head -->
 
@@ -56,57 +57,134 @@
             <div class="green-frame">
 
                 <!-- title in h1 (heading level 1) style -->
-                <h1>Welcome 
-                    <!-- span - generic inline container for phrasing content -->
-                    <!---- id for JS to send in variable user name ---->
-                    <span id="name">
-                        <!-- & is the escape character of html -->
-                        <!---- 
-                            &lt; is > (less than symbol)
-                            &gt; is < (greater than symbol)
-                        ---->
-                        &lt;user&gt;
-                    </span>
-                    !
-                </h1>
+                <h1>Your Reservations</h1>
                 
-                <!-- form -->
-                <!-- for the buttons inside to act 'formaction' linking to the other pages -->
-                <form>
-                    
-                    <!-- button - css class: button-in-green-frame -->
-                    <!---- formaction links to user-create page ---->
-                    <button class="button-in-green-frame" formaction="main/create">
-                        CREATE RESERVATION
-                    </button>
+                <!-- p (paragraph) - css class: userNameID -->
+                <p class="userNameID">
 
-                    <br> <!-- br (break) - next line -->
-                    
-                    <!-- button - css class: button-in-green-frame -->
-                    <!---- formaction links to user-view page ---->
-                    <button class="button-in-green-frame" formaction="main/view">
-                        VIEW RESERVATIONS
-                    </button>
+                    <!-- span - generic inline container for phrasing content -->
+                    <!---- id for JS to send in variable name and ID ---->
+                    <span id="name">Lason</span>
+                    · 
+                    <span id="ID">41645645</span>
 
-                    <br> <!-- br (break) - next line -->
-
-                    <!-- button - css class: button-in-green-frame -->
-                    <!---- formaction links to user-cancel page ---->
-                    <button class="button-in-green-frame" formaction="main/cancel">
-                        CANCEL RESERVATIONS
-                    </button>
-
-                    <br> <!-- br (break) - next line -->
-
-                    <!-- button - css class: button-in-green-frame -->
-                    <!---- formaction links to login page ---->
-                    <button class="button-in-green-frame" formaction="/login">
-                        LOGOUT
-                    </button>
-
-                </form> <!-- end form-->
-
+                </p> <!-- end userNameID -->
+            
             </div> <!-- end green-frame -->
+
+            <!-- div (division) - css class: white-frame -->
+            <!-- the white and round corner frame with the green border -->
+            <div th:each="reservations : ${reservations}" class="white-frame">
+
+                <!-- title -->
+                <!-- b (bold) -->
+                <b>
+                    <!-- span - generic inline container for phrasing content -->
+                    <!---- css class: green-text ---->
+                    <span class="green-text">
+                        Cubicle #
+                    </span>
+                    <!-- span - generic inline container for phrasing content -->
+                    <!---- css class: green-text ---->
+                    <span th:text="${reservations.getReservationCubicleID}" class="green-text"></span>
+                </b>
+
+                <br> <!-- br (break) - next line -->
+
+                <!-- div (division) - css class: date-block -->
+                <!-- for lining up the start date -->
+                <div class="date-block">
+                    <!-- span - generic inline container for phrasing content -->
+                    <!---- css class: small-bold ---->
+                    <span class="small-bold">Start date</span>
+                    <br> <!-- br (break) - next line -->
+                    <!-- span - generic inline container for phrasing content -->
+                    <!-- send in variable start date -->
+                    <span th:text="${reservations.getReservationSDate}"></span>
+                </div>
+
+                <!-- div (division) - css class: date-block -->
+                <!-- for lining up the end date -->
+                <div class="date-block">
+                    <!-- span - generic inline container for phrasing content -->
+                    <!---- css class: small-bold ---->
+                    <span class="small-bold">End date</span>
+                    <br> <!-- br (break) - next line -->
+                    <!-- span - generic inline container for phrasing content -->
+                    <!-- send in variable end date -->
+                    <span th:text="${reservations.getReservationEDate}"></span>
+                </div>
+
+            </div> <!-- end white-frame -->
+            
+            <!-- form -->
+            <!-- for the buttons inside to act 'formaction' linking to the other pages -->
+            <form>
+                
+                <!-- div (division) - css class: flex-wrap -->
+                <!-- for buttons to auto take the full width and/or divide the space -->
+                <div class="flex-wrap">
+
+                    <!-- cancel a reservation button -->
+                    <!---- type defining button type ---->
+                    <!---- css class: white-button ---->
+                    <!---- formaction links to user-cancel page ---->
+                    <button type ="submit" class="white-button" formaction="/main/cancel">
+                        CANCEL A RESERVATION
+                    </button>
+
+                    <!-- main menu button -->
+                    <!---- type defining button type ---->
+                    <!---- css class: green-button ---->
+                    <!---- formaction links to user-main page ---->
+                    <button type ="submit" class="green-button" formaction="/main">
+                        MAIN MENU
+                    </button>
+                    
+                </div> <!-- end flex-wrap -->
+
+            </form> <!-- end form-->
+
+            <!-- <script>
+                var reservationCount = 5;
+
+                for (let i = 0; i < reservationCount; i++)
+                {
+                    // create a <p> </p> element
+                    var p_tag = document.createElement("p");
+
+                    // create a <span> </span> element
+                    var span_name = document.createElement("span");
+
+                    // create the text to add inside the span
+                    var name_content = document.createTextNode("Lason");
+
+                    // set span id to name
+                    // <span id = "name"> </span>
+                    span_name.id = "name" 
+
+                    // add the text into the span 
+                    // <span id = name>Lason</span>
+                    span_name.appendChild(name_content);
+
+                    // create a "." text
+                    var dot_text = document.createTextNode(".");
+                    
+                    // same format to create a new span as previous
+                    var span_id = document.createElement("span");
+                    var id_content = document.createTextNode("41645645");
+                    span_id.id = "ID";
+                    span_id.appendChild(id_content);
+
+                    // add the spans and text into the <p> tag
+                    p_tag.appendChild(span_name);
+                    p_tag.appendChild(dot_text);
+                    p_tag.appendChild(span_id);
+
+                    // find the element with this id in the HTML and add the p_tag
+                    document.getElementById("reservations").appendChild(p_tag);       
+                }    
+            </script> --> 
 
         </div> <!-- end content-frame -->
 
