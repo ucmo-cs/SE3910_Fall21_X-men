@@ -10,5 +10,6 @@ public interface ReservationRepository
     ReservationsTable saveReservation(ReservationsTable reservationsTable);
     int cancelReservation(String id);
 
-    List<ReservationsTable> findAll();
+    String findOnlineUserID();
+    List<ReservationsTable> findUserReservations(String onlineUser);
 }
