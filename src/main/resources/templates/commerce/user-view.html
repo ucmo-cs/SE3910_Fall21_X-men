@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--
-    User View Page
+    User Cancel Page
 
         SE 3910 Software Engineering - Fall 2021
         Instructor: Taeghyun Kang
@@ -20,7 +20,7 @@
 <!---- web language: English ---->
 <!---- id for the background-image control in CSS ---->
 <!---- xmlns (XML namespaces) :th to declare a thymeleaf namespace ---->
-<html lang="en" id="user-view-page" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" id="user-cancel-page" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 
 <!-- head - meta, title, and the linking CSS and JS goes here -->
 <head>
@@ -29,7 +29,7 @@
     <meta charset="UTF-8">
 
     <!-- web title -->
-    <title>View | Hotel Cubicle Reservation System</title>
+    <title>Cancel | Hotel Cubicle Reservation System</title>
 
     <!-- link the CSS file -->
     <!---- rel (relationship): stylesheet ---->
@@ -71,6 +71,7 @@
                 </p> <!-- end userNameID -->
             
             </div> <!-- end green-frame -->
+
 
             <!-- div (division) - css class: white-frame -->
             <!-- the white and round corner frame with the green border -->
@@ -115,8 +116,17 @@
                     <span th:text="${reservations.getReservationEDate}"></span>
                 </div>
 
+                <div class="cancel-block">
+                    <form>
+                        <input th:value="${reservations.getReservationID}" />
+                        <br>
+                        <button type="submit" class="cancel-button"><b>🗑</b> CANCEL</button>
+                    </form>
+
+                </div>
+
             </div> <!-- end white-frame -->
-            
+
             <!-- form -->
             <!-- for the buttons inside to act 'formaction' linking to the other pages -->
             <form>
@@ -125,12 +135,12 @@
                 <!-- for buttons to auto take the full width and/or divide the space -->
                 <div class="flex-wrap">
 
-                    <!-- cancel a reservation button -->
+                    <!-- view reservations button -->
                     <!---- type defining button type ---->
                     <!---- css class: white-button ---->
-                    <!---- formaction links to user-cancel page ---->
-                    <button type ="submit" class="white-button" formaction="/main/cancel">
-                        CANCEL A RESERVATION
+                    <!---- formaction links to user-view page ---->
+                    <button type ="submit" class="white-button" formaction="/main/view">
+                        VIEW RESERVATIONS
                     </button>
 
                     <!-- main menu button -->
@@ -145,46 +155,7 @@
 
             </form> <!-- end form-->
 
-            <!-- <script>
-                var reservationCount = 5;
-
-                for (let i = 0; i < reservationCount; i++)
-                {
-                    // create a <p> </p> element
-                    var p_tag = document.createElement("p");
-
-                    // create a <span> </span> element
-                    var span_name = document.createElement("span");
-
-                    // create the text to add inside the span
-                    var name_content = document.createTextNode("Lason");
-
-                    // set span id to name
-                    // <span id = "name"> </span>
-                    span_name.id = "name" 
-
-                    // add the text into the span 
-                    // <span id = name>Lason</span>
-                    span_name.appendChild(name_content);
-
-                    // create a "." text
-                    var dot_text = document.createTextNode(".");
-                    
-                    // same format to create a new span as previous
-                    var span_id = document.createElement("span");
-                    var id_content = document.createTextNode("41645645");
-                    span_id.id = "ID";
-                    span_id.appendChild(id_content);
-
-                    // add the spans and text into the <p> tag
-                    p_tag.appendChild(span_name);
-                    p_tag.appendChild(dot_text);
-                    p_tag.appendChild(span_id);
-
-                    // find the element with this id in the HTML and add the p_tag
-                    document.getElementById("reservations").appendChild(p_tag);       
-                }    
-            </script> --> 
+            </div> <!-- end green-frame -->
 
         </div> <!-- end content-frame -->
 
