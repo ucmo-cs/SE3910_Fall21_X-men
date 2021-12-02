@@ -2,6 +2,7 @@ package com.example.commerce.repository;
 
 import com.example.commerce.domain.Member;
 import com.example.commerce.domain.ReservationsTable;
+import com.example.commerce.domain.UserTable;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
@@ -31,10 +32,23 @@ public class JPAReservationRepository implements ReservationRepository
         return deletedRows;
     }
 
-    @Override
+    /*@Override
     public List<ReservationsTable> findAll() {
         return em.createQuery("select r from ReservationsTable r" , ReservationsTable.class)
                 .getResultList();
+    }*/
 
+    @Override
+    public String findOnlineUserID() {
+        return em.createQuery("select u.userid from UserTable u where u.online = 1")
+                .getResultList()
+                .get(0) + "";
+    }
+
+    @Override
+    public List<ReservationsTable> findUserReservations(String onlineUser) {
+        return em.createQuery("select r from ReservationsTable r where r.userID = :onlineUser", ReservationsTable.class)
+                .setParameter("onlineUser", onlineUser)
+                .getResultList();
     }
 }
