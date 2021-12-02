@@ -20,7 +20,7 @@
 <!---- web language: English ---->
 <!---- id for the background-image control in CSS ---->
 <!---- xmlns (XML namespaces) :th to declare a thymeleaf namespace ---->
-<html lang="en" id="user-cancel-page" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" id="user-cancel-page" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 
 <!-- head - meta, title, and the linking CSS and JS goes here -->
 <head>
@@ -59,11 +59,11 @@
                 <!-- title in h1 (heading level 1) style -->
                 <h1>Your Reservations</h1>
                 
-                <!-- p (paragraph) - css class: userNameID -->
+                <!-- p (paragraph) - css class: userNameID --
                 <p class="userNameID">
 
-                    <!-- span - generic inline container for phrasing content -->
-                    <!---- id for JS to send in variable name and ID ---->
+                    <!-- span - generic inline container for phrasing content --
+                    <!---- id for JS to send in variable name and ID ----
                     <span id="name">Lason</span>
                     · 
                     <span id="ID">41645645</span>
@@ -75,7 +75,7 @@
 
             <!-- div (division) - css class: white-frame -->
             <!-- the white and round corner frame with the green border -->
-            <div class="white-frame">
+            <div th:each="reservations : ${reservations}" class="white-frame">
 
                 <!-- title -->
                 <!-- b (bold) -->
@@ -87,10 +87,7 @@
                     </span>
                     <!-- span - generic inline container for phrasing content -->
                     <!---- css class: green-text ---->
-                    <!---- id for JS to send in variable cubicle number -->
-                    <span class="green-text" id="cubicle">
-                        1
-                    </span>
+                    <span th:text="${reservations.getReservationCubicleID}" class="green-text"></span>
                 </b>
 
                 <br> <!-- br (break) - next line -->
@@ -104,7 +101,7 @@
                     <br> <!-- br (break) - next line -->
                     <!-- span - generic inline container for phrasing content -->
                     <!-- send in variable start date -->
-                    <span>9/16/21</span>
+                    <span th:text="${reservations.getReservationSDate}"></span>
                 </div>
 
                 <!-- div (division) - css class: date-block -->
@@ -116,150 +113,19 @@
                     <br> <!-- br (break) - next line -->
                     <!-- span - generic inline container for phrasing content -->
                     <!-- send in variable end date -->
-                    <span>9/16/21</span>
+                    <span th:text="${reservations.getReservationEDate}"></span>
                 </div>
 
                 <div class="cancel-block">
-                    <button class="cancel-button"><b>🗑</b> CANCEL</button>
+                    <form>
+                        <input th:value="${reservations.getReservationID}" />
+                        <br>
+                        <button type="submit" class="cancel-button"><b>🗑</b> CANCEL</button>
+                    </form>
+
                 </div>
 
             </div> <!-- end white-frame -->
-
-            <!-- div (division) - css class: white-frame -->
-            <!-- the white and round corner frame with the green border -->
-            <div class="white-frame">
-
-                <!-- title -->
-                <!-- b (bold) -->
-                <b>
-                    <!-- span - generic inline container for phrasing content -->
-                    <!---- css class: green-text ---->
-                    <span class="green-text">
-                        Cubicle #
-                    </span>
-                    <!-- span - generic inline container for phrasing content -->
-                    <!---- css class: green-text ---->
-                    <!---- id for JS to send in variable cubicle number -->
-                    <span class="green-text" id="cubicle">
-                        12
-                    </span>
-                </b>
-
-                <br> <!-- br (break) - next line -->
-
-                <!-- div (division) - css class: date-block -->
-                <!-- for lining up the start date -->
-                <div class="date-block">
-                    <!-- span - generic inline container for phrasing content -->
-                    <!---- css class: small-bold ---->
-                    <span class="small-bold">Start date</span>
-                    <br> <!-- br (break) - next line -->
-                    <!-- span - generic inline container for phrasing content -->
-                    <!-- send in variable start date -->
-                    <span>12/12/21</span>
-                </div>
-
-                <!-- div (division) - css class: date-block -->
-                <!-- for lining up the end date -->
-                <div class="date-block">
-                    <!-- span - generic inline container for phrasing content -->
-                    <!---- css class: small-bold ---->
-                    <span class="small-bold">End date</span>
-                    <br> <!-- br (break) - next line -->
-                    <!-- span - generic inline container for phrasing content -->
-                    <!-- send in variable end date -->
-                    <span>3/16/22</span>
-                </div>
-
-                <div class="cancel-block">
-                    <button class="cancel-button"><b>🗑</b> CANCEL</button>
-                </div>
-
-            </div> <!-- end white-frame -->
-
-            <!-- reservations loop
-            <div id="reservations"></div>
-
-            <script>
-                var reservationCount = 5;
-
-                for (let i = 0; i < reservationCount; i++)
-                {
-                    // create a <div> </div> element
-                    var white_frame = document.createElement("div");
-                    // set div class
-                    // <div class = "white-frame"> </div>
-                    white_frame.className = "white-frame";
-
-                    // create a <span> </span> element
-                    var cubicle_number = document.createElement("span");
-                    // set span class
-                    // <span class = "green-text"> </span>
-                    cubicle_number.className = "green-text";
-
-                    // create the text to add inside the span
-                    var cubicle_number_text = document.createTextNode("Cubicle #1");
-
-                    // add the text into the span 
-                    // <span span class="green-text">Cubicle #1</span>
-                    cubicle_number.appendChild(cubicle_number_text);
-
-                    /* same format to create a new elements as previous */
-
-                    // start date block
-                    var start_date_block = document.createElement("div");
-                    start_date_block.className = "date-block";
-                    
-                    // start date title
-                    var start_date_title = document.createElement("span");
-                    start_date_title.className = "small-bold";
-                    var start_date_title_text = document.createTextNode("Start date");
-                    start_date_title.appendChild(start_date_title_text);
-    
-                    // start date
-                    var start_date = document.createElement("span");
-                    var start_date_text = document.createTextNode("9/12/21");
-                    start_date.appendChild(start_date_text);
-
-                    // add up to start the date block
-                    start_date_block.appendChild(start_date_title);
-                    var br = document.createElement("br");
-                    start_date_block.appendChild(br);
-                    start_date_block.appendChild(start_date);
-
-                    // end date block
-                    var end_date_block = document.createElement("div");
-                    end_date_block.className = "date-block";
-
-                    // end date title
-                    var end_date_title = document.createElement("span");
-                    end_date_title.className = "small-bold";
-                    var end_date_title_text = document.createTextNode("End date");
-                    end_date_title.appendChild(end_date_title_text);
-                    
-                    // end date
-                    var end_date = document.createElement("span");
-                    var end_date_text = document.createTextNode("9/12/21");
-                    end_date.appendChild(end_date_text);
-
-                    // add up to end the date block
-                    end_date_block.appendChild(end_date_title);
-                    var br = document.createElement("br");
-                    end_date_block.appendChild(br);
-                    end_date_block.appendChild(end_date);
-                    
-                    // add up to the withe frame
-                    white_frame.appendChild(cubicle_number);
-                    var br = document.createElement("br");
-                    white_frame.appendChild(br);
-                    white_frame.appendChild(start_date_block);
-                    white_frame.appendChild(end_date_block);
-
-                    // find the element with this id in the HTML and add the white frame
-                    document.getElementById("reservations").appendChild(white_frame);       
-                }    
-            </script>
-            end reservations loop -->
 
             <!-- form -->
             <!-- for the buttons inside to act 'formaction' linking to the other pages -->
