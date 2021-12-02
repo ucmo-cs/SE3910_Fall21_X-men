@@ -32,6 +32,7 @@ public class ReservationService
     }
 
     public List<ReservationsTable> findReservations(){
-        return reservationRepository.findAll();
+        String onlineUser = reservationRepository.findOnlineUserID();
+        return reservationRepository.findUserReservations(onlineUser);
     }
 }
