@@ -118,8 +118,7 @@
 
                 <div class="cancel-block">
                     <form method="post">
-                        <input id = "deleteInput" name = "deleteInput" th:value="${reservations.getReservationID}" />
-                        <br>
+                        <input type="hidden" id = "deleteInput" name = "deleteInput" th:value="${reservations.getReservationID}" />
                         <button name = "delete" type="submit" class="cancel-button"><b>🗑</b> CANCEL</button>
                     </form>
 
