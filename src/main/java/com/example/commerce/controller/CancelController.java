@@ -33,6 +33,13 @@ public class CancelController
         this.reservationRepository = reservationRepository;
         this.reservationService = reservationService;
     }
+
+    @RequestMapping(value="main/cancel", method = RequestMethod.POST, params="delete")
+    public String cancelRes(@RequestParam("deleteInput") String reservationID)
+    {
+        reservationService.delete(reservationID);
+        return "commerce/user-cancel";
+    }
 }
 
 

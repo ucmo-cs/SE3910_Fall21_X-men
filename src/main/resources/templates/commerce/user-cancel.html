@@ -117,10 +117,10 @@
                 </div>
 
                 <div class="cancel-block">
-                    <form>
-                        <input th:value="${reservations.getReservationID}" />
+                    <form method="post">
+                        <input id = "deleteInput" name = "deleteInput" th:value="${reservations.getReservationID}" />
                         <br>
-                        <button type="submit" class="cancel-button"><b>🗑</b> CANCEL</button>
+                        <button name = "delete" type="submit" class="cancel-button"><b>🗑</b> CANCEL</button>
                     </form>
 
                 </div>
